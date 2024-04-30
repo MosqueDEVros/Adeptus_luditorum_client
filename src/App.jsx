@@ -1,11 +1,10 @@
 import './App.css'
-import Prueba from './components/Prueba'
 
 function App() {
 
   return (
     <>
-      <Prueba></Prueba>
+      <h1>aqui estamos</h1>
     </>
   )
 }
