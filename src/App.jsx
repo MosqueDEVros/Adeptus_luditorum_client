@@ -1,10 +1,9 @@
-import './App.css'
 
 function App() {
 
   return (
     <>
-      <h1>aqui estamos</h1>
+      <h1 className='rowdies-regular '>HOME</h1>
     </>
   )
 }
