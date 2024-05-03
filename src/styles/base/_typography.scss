@@ -20,3 +20,22 @@
   font-weight: 700;
   font-style: normal;
 }
+
+
+
+//estos estilos globales estan copnectado con otros estilos que genero en el base que estan llamadop de la misma manera
+//si vais a cambiar algo de estos mirar los que hay en _base
+h1{
+       @include font-rowdies-bold  ;
+
+}
+
+//este h3 de manera logica lo ajuste por que h1 osa bold y p ligth (puede ser cambiable)
+h3{
+ @include font-rowdies-regular  
+}
+
+
+p{
+     @include font-rowdies-light ;
+}

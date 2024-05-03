@@ -4,15 +4,15 @@ const MenuLinks = () => {
     return (
 
         <div className="component2">
-            < Link className="navbar-link">
+            <Link className="navbar-link">
                 HOME
-            </Link >
+            </Link>
             <Link className="navbar-link">
                 SOBRE NOSOTROS
             </Link>
             <Link className="navbar-link">
                 GALERÍA
-            </Link >
+            </Link>
             <Link className="navbar-link">
                 CONTACTO
             </Link>

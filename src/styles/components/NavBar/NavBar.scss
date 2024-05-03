@@ -1,8 +1,70 @@
-    nav{
-margin-top: 1rem;
-@include rowJB
+    
+    // barra de navegacion base
+    .nav-base{
+      margin: 1rem 1rem;
+@include rowJB;
+align-items: start;
+align-content: flex-start;
+    }
+
+   // al activar el dropdown de menu version mobile
+//     .nav-no-extend{
+//   animation: shrinkDropMenuReverse 1s ease forwards; /* Animación inversa */
+//     }
+
+
+// @keyframes shrinkDropMenuReverse {
+//   0% {
+//     height: 30vh; /* Altura final de .nav-extend */
+//   }
+//   50% {
+//     height: 35vh;
+//   }
+//   100% {
+//     height: 5vh;
+//   }
+// }
+
+
+
+     // al desactivar el dropdown de menu version mobile
+    .nav-extend{
+animation:extenDdropMenu 1s ease forwards ;
 
     }
+
+@keyframes extenDdropMenu{
+0%{
+  height: 0vh;
+}
+50%{
+height: 35vh;
+}
+100%{
+height: 30vh;
+}
+}
+
+
+// oculta en version mobile la barra de navegacion
+.hidden{
+display: none;
+}
+
+// aparece en version mobile la barra de navegacion y la coloca
+.block{
+display: flex;
+position: absolute;
+top:5rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+
+
+
+// disposicion componente de logo empresa y navegacion por la web
 .reverse-mb{
   width: 45vw;
     display: flex;
@@ -12,24 +74,20 @@ margin-top: 1rem;
 }
 
 
-.hidden{
-display: none;
-}
-
-.block{
-display: flex;
-position: fixed;
-top:5rem;
-  left: 50%;
-  transform: translateX(-50%);
+// disposicion iconos de cuenta facebook y instagram
+.icon-social-block{
+ padding: 0.5rem;
+  display: block;
 }
 
 
 
+
+// version tablet
 @media (min-width: 750px){
 
 .reverse-mb{
-      width: 70vw;
+      width: 80vw;
     flex-direction: row;
 }
 .hidden{
@@ -43,7 +101,7 @@ display: none;
 }
 
 }
-
+// version pc
 
 @media (min-width: 1450px){
 
