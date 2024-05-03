@@ -14,6 +14,8 @@
 //componente galeria/carrousel
 @import './components/Galery/CarrouselGalery.scss';
 
+//componente map
+@import './components/Map/Map.scss';
 
 
 // PAGES
@@ -29,3 +31,6 @@
 // pagina galeria/carrousel
 @import './pages/FrontPage.scss';
 @import './pages/GaleryPage.scss';
+
+// pagina de la localización dirección + map
+@import './pages/Location.scss';

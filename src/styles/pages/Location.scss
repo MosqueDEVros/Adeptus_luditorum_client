@@ -1,0 +1,74 @@
+.fondo {
+
+    .donde-estamos {
+        @include font-rowdies-regular;
+        color: $colorSecondary;
+        text-align: center;
+        line-height: 6.5rem;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .where-we-are {
+            font-size: 1.875rem;
+            width: 20.4375rem;
+            height: 5.125rem;
+            border-bottom: 0.0625rem solid $colorSecondary;
+        }
+
+        .address {
+            margin-top: 1.87rem;
+            color: #FFF;
+            text-align: center;
+            font-family: Inter;
+            font-size: 1rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+    }
+
+}
+
+//tablet
+@media (min-width: 768px) {
+    .fondo {
+
+        .donde-estamos {
+            width: 45.2rem;
+            height: 32.7rem;
+            margin: auto;
+
+            .where-we-are {
+                border: none;
+                width: 22.3125rem;
+                height: 5.125rem;
+                font-size: 2.5rem;
+            }
+
+            .address {
+                margin: 1.25rem auto 1.25rem auto;
+
+                .br-display {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1280px) {
+
+    .fondo {
+
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: linear-gradient(0deg, rgba(3, 73, 174, 0.73) -4.81%, rgba(14, 59, 124, 0.83) 14.78%, #212121 86.05%),
+            url('./public/bg-location.png') lightgray 50% / cover no-repeat;
+        height: 60.8125rem;
+
+    }
+}

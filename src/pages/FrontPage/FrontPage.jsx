@@ -4,7 +4,10 @@ const FrontPage = () => {
 
 
     const arrowMoveBot = () => {
-        console.log('bajandooo')
+        // Obtenemos la altura de la ventana
+        const windowHeight = window.innerHeight;
+        // Desplazamos la página hacia abajo la altura de la ventana
+        window.scrollBy({ top: windowHeight, behavior: 'smooth' });
     }
 
     return (
