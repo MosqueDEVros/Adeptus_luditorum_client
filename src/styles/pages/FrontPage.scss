@@ -1,0 +1,80 @@
+
+// div base de la pagina inicial/portada
+
+.index-490{
+     background-image: url('/public/indexBG.png');
+     width: 100vw;
+    height: 100vh;
+    background-size:cover ;
+    background-repeat: no-repeat;
+     background-position: 69%;
+     text-align: center;
+@include columnJA;
+
+
+
+.div-text{
+    margin-top: 8rem;
+}
+
+
+// estilos para el h1
+     .title-index{
+text-shadow: 17px 12px 4px rgba(0, 0, 0, 0.24);
+margin-bottom: 0;
+     }
+// estilos para el parrafo de la home
+     .p-index{
+        color: white;
+text-shadow: 17px 12px 4px rgba(0, 0, 0, 0.24);
+margin-top: 0;
+     }
+// button que aparece una flecha
+.btn-arrow-up{
+    cursor: pointer;
+}
+}
+
+
+// version tablet
+@media (min-width: 750px){
+.index-490{
+
+    .title-index{
+        font-size: 6.25rem;
+        line-height: 6.5rem; 
+    }
+    
+    .p-index{
+        
+        font-size: 1.875rem;
+        line-height: 6.5rem; 
+    }
+   
+}
+
+}
+// version pc
+
+@media (min-width: 1450px){
+.index-490{
+
+    .title-index{
+        width: 51rem;
+height: 12rem;
+      font-size: 6.25rem;
+        line-height: 6.5rem; 
+    }
+    
+    .p-index{
+        
+        font-size: 1.875rem;
+        line-height: 6.5rem; 
+    }
+    .btn-arrow-index{
+    margin-top: 10rem;
+ 
+}
+}
+
+}
