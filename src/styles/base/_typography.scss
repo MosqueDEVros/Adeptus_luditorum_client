@@ -1,5 +1,5 @@
 
-// url fuente google
+// url fuente google rowdie
 @import url('https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap');
 
 
@@ -19,4 +19,45 @@
   font-family: "Rowdies", sans-serif;
   font-weight: 700;
   font-style: normal;
+}
+// url fuente google intel
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+@mixin font-intel-light {
+    font-family: "Inter", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+@mixin font-intel-regular {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@mixin font-intel-bold {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+
+
+
+
+//estos estilos globales estan copnectado con otros estilos que genero en el base que estan llamadop de la misma manera
+//si vais a cambiar algo de estos mirar los que hay en _base
+h1{
+       @include font-rowdies-bold  ;
+
+}
+
+//este h3 de manera logica lo ajuste por que h1 osa bold y p ligth (puede ser cambiable)
+h3{
+ @include font-rowdies-regular  
+}
+
+
+p{
+     @include font-rowdies-light ;
 }
