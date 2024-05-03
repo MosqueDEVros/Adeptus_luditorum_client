@@ -5,25 +5,26 @@
 @include rowJB;
 align-items: start;
 align-content: flex-start;
+  height: 5vh;
     }
 
-   // al activar el dropdown de menu version mobile
-//     .nav-no-extend{
-//   animation: shrinkDropMenuReverse 1s ease forwards; /* Animación inversa */
-//     }
+  //  al activar el dropdown de menu version mobile
+    .nav-no-extend{
+  animation: shrinkDropMenuReverse 1s ease forwards; /* Animación inversa */
+    }
 
 
-// @keyframes shrinkDropMenuReverse {
-//   0% {
-//     height: 30vh; /* Altura final de .nav-extend */
-//   }
-//   50% {
-//     height: 35vh;
-//   }
-//   100% {
-//     height: 5vh;
-//   }
-// }
+@keyframes shrinkDropMenuReverse {
+  0% {
+    height: 30vh; /* Altura final de .nav-extend */
+  }
+  50% {
+    height: 35vh;
+  }
+  100% {
+    height: 5vh;
+  }
+}
 
 
 
