@@ -8,7 +8,7 @@ const IconsNavBar = () => {
     return (
         <div className=''>
             {/* TODO aqui ira la ruta de login */}
-            <Link className=''
+            <Link className=""
                 to={'https://drive.google.com/file/d/1N6UJEGMv43T9To9OEnUhuIEsgMQNUAIc/view'}>
                 <img src={Account} />
             </Link>
