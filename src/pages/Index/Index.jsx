@@ -1,4 +1,5 @@
 import FrontPage from "../FrontPage/FrontPage"
+import { GaleryPage } from "../GaleryPage/GaleryPage"
 
 
 const Index = () => {
@@ -7,6 +8,10 @@ const Index = () => {
 
         <>
             <FrontPage />
+            {/* aqui hiria sobre nosotros */}
+            <GaleryPage />
+            {/* aqui hiria eventos */}
+            {/* aqui hiria  ¿Dónde estamos? */}
         </>
 
 
