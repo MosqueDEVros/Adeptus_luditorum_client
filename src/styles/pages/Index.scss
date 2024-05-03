@@ -1,0 +1,78 @@
+.index-490{
+     background-image: url('/public/indexBG.png');
+     width: 100vw;
+    height: 100vh;
+    background-size:cover ;
+    background-repeat: no-repeat;
+     background-position: 69%;
+     text-align: center;
+@include columnJA;
+
+.div-text{
+    margin-top: 8rem;
+}
+     .title-index{
+     color:$colorSecondary;
+     @include font-rowdies-regular ;
+text-shadow: 17px 12px 4px rgba(0, 0, 0, 0.24);
+font-size: 3.125rem;
+line-height: 2.875rem; /* 92% */
+margin-bottom: 0;
+     }
+
+     .p-index{
+        color: white;
+        @include font-rowdies-light;
+text-shadow: 17px 12px 4px rgba(0, 0, 0, 0.24);
+font-size: 1.0625rem;
+line-height: 6.5rem; /* 611.765% */
+margin-top: 0;
+     }
+
+.btn-arrow-up{
+    cursor: pointer;
+}
+}
+
+
+@media (min-width: 750px){
+.index-490{
+
+    .title-index{
+        font-size: 6.25rem;
+        line-height: 6.5rem; 
+    }
+    
+    .p-index{
+        
+        font-size: 1.875rem;
+        line-height: 6.5rem; 
+    }
+   
+}
+
+}
+
+
+@media (min-width: 1450px){
+.index-490{
+
+    .title-index{
+        width: 51rem;
+height: 12rem;
+      font-size: 6.25rem;
+        line-height: 6.5rem; 
+    }
+    
+    .p-index{
+        
+        font-size: 1.875rem;
+        line-height: 6.5rem; 
+    }
+    .btn-arrow-index{
+    margin-top: 10rem;
+ 
+}
+}
+
+}

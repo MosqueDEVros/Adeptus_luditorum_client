@@ -5,7 +5,7 @@ import MenuLinks from "./ComponentNavBar/MenuLinks"
 
 const NavBar = () => {
 
-    const [showMenu, setShowMenu] = useState(false)
+    const [showMenu, setShowMenu] = useState(true)
 
     const hiddenMobile = () => {
         setShowMenu(!showMenu)
