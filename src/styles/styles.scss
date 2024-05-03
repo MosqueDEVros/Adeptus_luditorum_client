@@ -9,7 +9,13 @@
 @import './components/NavBar/ComponentNavBar/MenuLinks';
 @import './components/NavBar/ComponentNavBar//LogoNavBar.scss';
 
+//componente map
+@import './components/Map/Map.scss';
+
 // PAGES
 
 // pagina portada
 @import './pages/Index.scss';
+
+// pagina de la localización dirección + map
+@import './pages/Location.scss';
