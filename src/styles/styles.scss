@@ -10,7 +10,22 @@
 @import './components/NavBar/ComponentNavBar/LogoNavBar.scss';
 @import './components/NavBar/ComponentNavBar/IconsNavBar.scss';
 
+
+//componente galeria/carrousel
+@import './components/Galery/CarrouselGalery.scss';
+
+
+
 // PAGES
 
-// pagina portada
+// pagina index
 @import './pages/Index.scss';
+
+
+// pagina portada
+@import './pages/FrontPage.scss';
+
+
+// pagina galeria/carrousel
+@import './pages/FrontPage.scss';
+@import './pages/GaleryPage.scss';
