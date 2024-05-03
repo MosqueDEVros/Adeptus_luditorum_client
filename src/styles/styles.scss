@@ -1,10 +1,15 @@
 // BASE
-@import './base/base';
-@import './base/typography';
+@import './base/_base';
+@import './base/_typography';
 
 // COMPONENTS
 
-
+// componente navbar
+@import './components/NavBar/NavBar';
+@import './components/NavBar/ComponentNavBar/MenuLinks';
+@import './components/NavBar/ComponentNavBar//LogoNavBar.scss';
 
 // PAGES
 
+// pagina portada
+@import './pages/Index.scss';

@@ -1,9 +1,13 @@
+import NavBar from "./components/NavBar/NavBar"
+import Index from "./pages/Index/Index"
 
 function App() {
 
   return (
     <>
-      <h1 className='rowdies-regular '>HOME</h1>
+      <NavBar />
+      <Index />
+
     </>
   )
 }
