@@ -5,8 +5,8 @@ export const GaleryPage = () => {
         <section className="bg-galery">
             <div className="bg-opacity-blue">
 
-                <div className="flex-galery-position">
-                    <h1>Galería</h1>
+                <div id="Galery" className="flex-galery-position">
+                    <h1 >Galería</h1>
                     <div className="rectangle-504">
                     </div>
                     <CarrouselGalery />
