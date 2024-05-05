@@ -1,36 +1,139 @@
-/* Ajustes generales para el contenedor del Swiper */
+// normalmente empezamos con mobilefirst pero en este caso el apartado mobile es muy diferente al tablet/pc 
+// por lo tanto empezamos tabletfirst y concretando tabler pequeña grandes y pc
+
+// estilo para el carrousel en general
 .swiper {
   width: 100vw; /* Ancho al 100% del contenedor */
-  max-width: 19.87981rem; /* Ancho máximo para los slides */
-  margin: 10rem auto; /* Centrar horizontalmente */
+  height: 100vh ;
+  margin: 3rem auto; /* Centrar horizontalmente */
   overflow: hidden; /* Ocultar contenido que se desborde */
 }
+// esta tambien
+.swiper-slide{
+  width: 50vw;
+  height: 40vh;
+}
 
-/* Estilos para cada slide del Swiper */
-.swiper-slide {
-   width: 13.87981rem !important; /* Ancho específico */
-  height: 12.09119rem !important; /* Altura específica */
-  background-image: url('/public/indexBG.png'); /* Imagen de fondo */
-  rotate: 90deg;
-  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); /* Forma de hexágono */
-  display: flex; /* Usar flexbox para centrar el contenido */
-  justify-content: center; /* Centrar horizontalmente */
-  align-items: center; /* Centrar verticalmente */
+.boxshadow{
+    width: 13rem;
+  height: 12rem;
+  background-color: transparent;
+filter: drop-shadow(13px 20px 14px rgba(0, 0, 0, 0.45));
+/* Estilos para cada figura en esta clase le damos un forma en partidular como celda de panal de abjea 
+ */
+.div-heaxgon {
+  background-color: white; /* Agregar un fondo */
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
 }
 
 
 
-@media (max-width: 750px) {
-  /* Estilos para dispositivos móviles */
+// clase reactiva que hace que cada figura este arriba o abajo  ya que si es top ira a arriba y bottom abajo las que contengan 
+//esta clase bajaran
+.div-heaxgon-bottom{
+  margin-top: 8rem;
+ 
+}
+
+
+// version tablet grandes
+@media (min-width:950px) {
+
+.boxshadow{
+    width: 17rem;
+  height: 16rem;
+
+    .div-heaxgon-bottom{
+  margin-top: 12rem;
+ 
+}
+
+}
+
+
+}
+
+// version pc
+@media (min-width:1400px) {
+
+
+.boxshadow{
+   width: 22rem;
+height: 22rem;
+}
+
+}
+
+
+
+
+/* versión móvil global */
+
+@media (min-width: 320px) and (max-width: 505px) {
   .swiper {
-    transform: rotate(90deg); /* Rotar el Swiper */
-    max-width: 100%; /* Ancho máximo al 100% */
-    height: 50vw; /* Altura al 50% del viewport width */
+  transform: rotate(91deg);
+   margin: 12rem 8rem; 
+ 
+}
+
+.div-heaxgon {
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  transform: rotate(-91deg); /* Rotar el elemento 90 grados en sentido horario */
+}
+
+
+// esta tambien
+.swiper-slide{
+  width: 20vw;
+  height: 20vh;
+}
+
+.boxshadow{
+    width: 10rem;
+  height: 10rem;
+    background-color: transparent;
+filter: drop-shadow(7.848px 12.074px 8.452px rgba(0, 0, 0, 0.45));}
+
+.div-heaxgon-bottom{
+  margin-top: 8rem;
+ 
+}
+
+
   }
 
-  /* Ajustes para cada slide en dispositivos móviles */
-  .swiper-slide {
-    width: 100%; /* Ancho al 100% */
-    height: auto; /* Altura automática */
-  }
+/* versión móvil S */
+@media (min-width: 320px) and (max-width: 350px) {
+.swiper {
+  transform: rotate(91deg);
+   width: 180vw; /* Ancho al 100% del contenedor */
+   height: 40vh;
 }
+
+
+}
+
+/* versión móvil M */
+@media (min-width: 350px) and (max-width: 380px) {
+.swiper {
+   width: 170vw; /* Ancho al 100% del contenedor */
+   height: 40vh;
+}
+
+
+}
+
+/* versión móvil L */
+@media (min-width: 380px) and (max-width: 450px) {
+.swiper {
+   width: 150vw; /* Ancho al 100% del contenedor */
+   height: 40vh;
+}
+
+
+}
+
+
+
+
