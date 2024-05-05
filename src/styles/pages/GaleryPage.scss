@@ -33,7 +33,7 @@ height: 0.125rem;
 .bg-galery{
 
  background: linear-gradient(0deg, rgba(3, 73, 174, 0.76) 0%, rgba(3, 73, 174, 0.76) 100%), url('/public/indexBG.png') lightgray 50% / cover no-repeat;
- 
+  height: 70vh;
     h1{
        font-size: 2.5rem;
         margin-bottom: 0.8rem;
@@ -55,7 +55,7 @@ height: 0.125rem;
     
  .bg-galery{
     background: linear-gradient(0deg, rgba(3, 73, 174, 0.00) 73.38%, #0349AE 103.55%), linear-gradient(180deg, rgba(3, 73, 174, 0.00) 16.65%, #212121 98.03%), linear-gradient(0deg, rgba(3, 73, 174, 0.76) 0%, rgba(3, 73, 174, 0.76) 100%), url('/public/indexBG.png') lightgray 50% / cover no-repeat;
-
+ height: 100vh;
     
     .rectangle-504{
 width: 60rem;

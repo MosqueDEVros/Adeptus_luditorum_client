@@ -18,6 +18,13 @@
 @import './components/Map/Map.scss';
 
 
+//componente AUTH
+@import './components/auth/SignUp.scss';
+@import './components/auth/LogIn.scss';
+@import './components/auth/AnimationLeft.scss';
+
+
+
 // PAGES
 
 // pagina index
@@ -29,8 +36,11 @@
 
 
 // pagina galeria/carrousel
-@import './pages/FrontPage.scss';
 @import './pages/GaleryPage.scss';
 
 // pagina de la localización dirección + map
 @import './pages/Location.scss';
+
+//pagina AUTH
+@import './pages/LogInPage.scss';
+@import './pages/SignUpPage.scss';
