@@ -1,0 +1,13 @@
+    .block-logIn{
+        @include rowJC;
+         height: 100vh;
+         width: 65vw;
+     background: #212121;
+
+     .form-logIn{
+        width: 30rem;
+        height: 30rem;
+        background-color: white;
+     }
+    }
+

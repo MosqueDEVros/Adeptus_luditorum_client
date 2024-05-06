@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import IconsNavBar from "./ComponentNavBar/IconsNavBar"
 import LogoNavBar from "./ComponentNavBar/LogoNavBar"
 import MenuLinks from "./ComponentNavBar/MenuLinks"
@@ -6,23 +6,27 @@ import MenuLinks from "./ComponentNavBar/MenuLinks"
 const NavBar = () => {
 
     const [showMenu, setShowMenu] = useState(true)
-
-
+    const [showMenuO, setShowMenu0] = useState(true)
 
 
 
 
     const toggleMenu = () => {
         setShowMenu(!showMenu);
+        setShowMenu0(false)
+
     }
 
     return (
-        <nav className={`nav-base ${showMenu ? 'nav-no-extend' : 'nav-extend'}`} >
+        // genero una clase dinamica dentro de otra clase dinamica por que por defecto al cargar la web se activaba una clase y queria que se active solo 
+        //cuando se haga click
+        <nav className={`nav-base ${showMenu ? !showMenuO ? 'nav-no-extend' : '' : 'nav-extend'}`} >
             <div className="reverse-mb">
 
 
                 <LogoNavBar />
 
+                {/* dropdown version mobile */}
                 <button onClick={() => toggleMenu()}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="17" viewBox="0 0 24 17" fill="none">
                         <path d="M22.5 7H1.5C0.671578 7 0 7.67158 0 8.5C0 9.32842 0.671578 10 1.5 10H22.5C23.3284 10 24 9.32842 24 8.5C24 7.67158 23.3284 7 22.5 7Z" fill={showMenu ? "#00509D" : "#74C4F5"} />
