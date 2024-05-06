@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import IconsNavBar from "./ComponentNavBar/IconsNavBar"
 import LogoNavBar from "./ComponentNavBar/LogoNavBar"
 import MenuLinks from "./ComponentNavBar/MenuLinks"
