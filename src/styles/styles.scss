@@ -10,6 +10,21 @@
 @import './components/NavBar/ComponentNavBar/LogoNavBar.scss';
 @import './components/NavBar/ComponentNavBar/IconsNavBar.scss';
 
+
+//componente galeria/carrousel
+@import './components/Galery/CarrouselGalery.scss';
+
+//componente map
+@import './components/Map/Map.scss';
+
+
+//componente AUTH
+@import './components/auth/SignUp.scss';
+@import './components/auth/LogIn.scss';
+@import './components/auth/AnimationLeft.scss';
+
+
+
 // PAGES
 
 // pagina index
@@ -18,3 +33,14 @@
 
 // pagina portada
 @import './pages/FrontPage.scss';
+
+
+// pagina galeria/carrousel
+@import './pages/GaleryPage.scss';
+
+// pagina de la localización dirección + map
+@import './pages/Location.scss';
+
+//pagina AUTH
+@import './pages/LogInPage.scss';
+@import './pages/SignUpPage.scss';

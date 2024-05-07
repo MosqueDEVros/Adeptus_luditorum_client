@@ -4,14 +4,17 @@ const FrontPage = () => {
 
 
     const arrowMoveBot = () => {
-        console.log('bajandooo')
+        // Obtenemos la altura de la ventana
+        const windowHeight = window.innerHeight;
+        // Desplazamos la página hacia abajo la altura de la ventana
+        window.scrollBy({ top: windowHeight, behavior: 'smooth' });
     }
 
     return (
 
 
 
-        <div className="index-490">
+        <section className="index-490">
             <div className="div-text">
                 <h1 className="title-index">
                     ADEPTUS LUDITORUM
@@ -28,7 +31,7 @@ const FrontPage = () => {
                 </svg>
             </button>
 
-        </div>
+        </section>
     )
 }
 
