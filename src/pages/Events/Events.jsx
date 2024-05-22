@@ -17,7 +17,7 @@ const Events = () => {
     };
 
     return (
-        <div className="events-page">
+        <div className="events-page" id='Events'>
             <div className="events-title">
                 <div className="title">Eventos</div>
                 <hr />

@@ -25,16 +25,16 @@ const MenuLinks = () => {
             pageGalery.scrollIntoView({ behavior: 'smooth' });
         }
     }
-    // DOM que te empuja a contacto esta conectado a un ref de contacto en algun lugar del index
-    function scrollToContact() {
-        const pageContact = document.getElementById('Contact');
-        if (pageContact) {
-            pageContact.scrollIntoView({ behavior: 'smooth' });
+    // DOM que te empuja a eventos esta conectado a un ref de evento en algun lugar del index
+    function scrollToEvents() {
+        const pageEvents = document.getElementById('Events');
+        if (pageEvents) {
+            pageEvents.scrollIntoView({ behavior: 'smooth' });
         }
     }
     // DOM que te empuja a contacto esta conectado a un ref de contacto en algun lugar del index
     function scrollToContact() {
-        const pageContact = document.getElementById('Event');
+        const pageContact = document.getElementById('Contact');
         if (pageContact) {
             pageContact.scrollIntoView({ behavior: 'smooth' });
         }
@@ -55,7 +55,7 @@ const MenuLinks = () => {
             <Link href="#" onClick={scrollToGalery} className="navbar-link">
                 GALERÍA
             </Link>
-            <Link href="#" onClick={scrollToHome} className="navbar-link">
+            <Link href="#" onClick={scrollToEvents} className="navbar-link">
                 EVENTOS
             </Link>
             <Link href="#" onClick={scrollToContact} className="navbar-link">
