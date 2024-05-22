@@ -33,6 +33,8 @@
 // pagina index
 @import './pages/Index.scss';
 
+// pagina about
+@import './pages/AboutPage.scss';
 
 // pagina portada
 @import './pages/FrontPage.scss';
@@ -47,3 +49,9 @@
 //pagina AUTH
 @import './pages/LogInPage.scss';
 @import './pages/SignUpPage.scss';
+
+// pagina eventos
+@import './pages/Events.scss';
+//componentes pagina eventos
+@import './components/Events/EventCard.scss';
+@import './components/Events/EventModal.scss';
