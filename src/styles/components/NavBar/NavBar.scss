@@ -1,4 +1,17 @@
     
+ .nav-bar-block{
+      width: 100vw;
+      position: fixed;
+      background-color: $bgPrimary;
+      z-index: 1000;
+    }
+
+
+
+    
+.hamburguer-btn{
+  margin-right: 0.4rem;
+}
     // barra de navegacion base
     .nav-base{
       margin: 1rem 1rem;
@@ -8,57 +21,115 @@ align-content: flex-start;
   height: 5vh;
     }
 
-  //  al activar el dropdown de menu version mobile
-    .nav-no-extend{
-  animation: shrinkDropMenuReverse 1s ease forwards; /* Animación inversa */
-    }
+.block-version-pc{
+  display: none;
+  margin: 0 auto;
 
-
-@keyframes shrinkDropMenuReverse {
-  0% {
-    height: 30vh; /* Altura final de .nav-extend */
-  }
-  50% {
-    height: 35vh;
-  }
-  100% {
-    height: 5vh;
-  }
 }
+  
+.hidden, .hiddenFilter{
+display: none;
 
-
-
-     // al desactivar el dropdown de menu version mobile
-    .nav-extend{
-animation:extenDdropMenu 1s ease forwards ;
-
-    }
-
-@keyframes extenDdropMenu{
-0%{
-  height: 0vh;
-}
-50%{
-height: 35vh;
-}
-100%{
-height: 30vh;
-}
 }
 
 
 // oculta en version mobile la barra de navegacion
-.hidden{
-display: none;
+.hidden-animation{
+  background-color: $bgPrimary;
+box-shadow: 7px 0px 14px 0px rgba(3, 73, 174, 1);
+ animation:extenDdropMenu 1s ease forwards ;
+ left: 0%;
+ top: 0%;
+ height: 125vh;
+flex-flow:column nowrap;
+justify-content: start;
+position: fixed;
+ animation:shrinkDropMenuReverse 0.7s ease forwards ;
 }
+
+@keyframes shrinkDropMenuReverse {
+  0% {
+    width: 75vw; /* Altura final de .nav-extend */
+  }
+ 
+  100% {
+    width: 0vw;
+    left: -9rem;
+
+  }
+}
+
+
 
 // aparece en version mobile la barra de navegacion y la coloca
 .block{
+ background-color: $bgPrimary;
+box-shadow: 7px 0px 14px 0px rgba(3, 73, 174, 1);
+ animation:extenDdropMenu 1s ease forwards ;
+ left: 0%;
+ top: 0%;
+ height: 125vh;
 display: flex;
-position: absolute;
-top:5rem;
-  left: 50%;
-  transform: translateX(-50%);
+flex-flow:column nowrap;
+justify-content: start;
+position: fixed;
+ animation:extenDdropMenu 0.5s ease forwards ;
+ left: 0%;
+ top: 0%;
+ height: 105vh;
+
+}
+
+@keyframes extenDdropMenu{
+0%{
+  width: 0vw;
+}
+100%{
+width: 75vw;
+}
+}
+
+.show-filter-black{
+    position: fixed;
+     top: 0%;
+height: 100vh;
+    width: 100vw;
+background:rgba(0, 0, 0, 0.463);
+ animation:extenDdropMenufilter 1s ease forwards ;
+
+}
+
+@keyframes extenDdropMenufilter{
+0%{
+  width: 0vw;
+}
+100%{
+width: 100vw;
+}
+}
+
+
+
+
+.block-btn-close{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+.btn-close-navbar{
+@include rowJC;
+margin-top: 1rem;
+margin-right: 1rem;
+  width: 19.5px;
+height: 19.5px;
+gap: 0px;
+opacity: 0px;
+border-radius: 0.5rem;
+background-color: $colorPrimary;
+}
+.btn-close-navbar p{
+font-size: 0.6rem;
+font-weight: 100 !important;
 }
 
 
@@ -67,11 +138,10 @@ top:5rem;
 
 // disposicion componente de logo empresa y navegacion por la web
 .reverse-mb{
-  width: 45vw;
+
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
-    max-width: 100%;
 }
 
 
@@ -86,29 +156,24 @@ top:5rem;
 
 // version tablet
 @media (min-width: 750px){
-
+.block-version-pc{
+  display: block;
+}
 .reverse-mb{
-      width: 80vw;
+  
     flex-direction: row;
 }
-.hidden{
-    display: block;
-}
-.block{
-  display: none;
-}
+
 .reverse-mb button{
 display: none;
 }
-
-}
-// version pc
-
-@media (min-width: 1450px){
-
-.reverse-mb{
-      width: 58vw;
+.show-filter-black{
+  display: none;
 }
 
-  
 }
+
+
+
+
+

@@ -2,21 +2,23 @@
 // componente principal div donde esta todos los LINKS
 
 .component2 {
+    
     @include columnJA;
+    align-items: start;
     @include font-rowdies-regular;
 }
 
 
 // estilos para cada uno de los LINK
 .navbar-link {
-  
+    text-align: start;
+  margin-left: 2rem;
     list-style-type: none;
     color: $colorPrimary;
     text-decoration: none;
     text-transform: none;
-    font-size: 1.125rem;
- margin-top: 1rem;
-    text-shadow: 2px 2px 6px $colorPrimary;
+    font-size: 1rem;
+ margin-top: 1.5rem;
     position: relative; /* Agregamos posición relativa */
 }
 
@@ -47,7 +49,7 @@
     bottom: -1px; /* Mueve el borde debajo del texto */
     left: 50%; /* Centra el borde horizontalmente */
     width: 0; /* Ancho inicial */
-    height: 2px; /* Grosor del borde */
+    height: 1px; /* Grosor del borde */
     background-color: $colorSecondary; /* Color del borde */
     transition: width 0.3s ease-out, left 0.3s ease-out; /* Transición suave */
     transform: translateX(-50% ); /* Centra el borde horizontalmente */
@@ -55,7 +57,7 @@
 }
 
 .navbar-link:hover::after {
- animation: animationBorderNavbar 1s forwards;
+ animation: animationBorderNavbar 1.5s forwards;
   box-shadow: 2px 2px 6px $colorPrimary; 
 }
 @keyframes animationBorderNavbar {
@@ -83,7 +85,21 @@
         @include rowJA;
     }
     .navbar-link {
- margin-top: 0.5rem;
-        margin-left: 2rem;
+         text-shadow: 2px 2px 6px $colorPrimary;
+         font-size: 0.8rem;
+        margin-top: 0.5rem;
+     
     }
 }
+
+
+@media (min-width: 850px) {
+    .component2 {
+        @include rowJA;
+    }
+    .navbar-link {
+         font-size: 1.2rem;
+      
+    }
+}
+

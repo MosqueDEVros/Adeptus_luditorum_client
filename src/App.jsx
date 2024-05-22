@@ -10,14 +10,22 @@ function App() {
   // para desaparezca la navbar en logIn y SignUP
   const isLogIndOrSignUp = useMemo(() => location.pathname === '/auth/LogIn' || location.pathname === '/auth/SignUp', [location])
 
+
+
+
+
+
   return (
     <>
       {/* esta clase la colocaremos en _base */}
       <div className={isLogIndOrSignUp ? 'nav-bar-hidden' : 'nav-bar-block'}>
+
         <NavBar />
+
       </div>
 
       <AppRoutes />
+
     </>
   );
 }

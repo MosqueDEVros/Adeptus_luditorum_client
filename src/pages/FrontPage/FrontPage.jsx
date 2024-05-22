@@ -14,7 +14,7 @@ const FrontPage = () => {
 
 
 
-        <section className="index-490">
+        <section id="Home" className="index-490">
             <div className="div-text">
                 <h1 className="title-index">
                     ADEPTUS LUDITORUM
