@@ -1,0 +1,34 @@
+.map-container {
+    text-align: center;
+    padding: 1rem 0.5rem 1.12rem 0.5rem;
+    flex-shrink: 0;
+    margin-top: 1.25rem;
+
+    iframe {
+        border-radius: 1.875rem;
+        width: 16.375rem;
+        height: 32.5625rem;
+        border: none;
+        flex-shrink: 0;
+    }
+}
+
+
+@media (min-width: 768px) {
+
+    iframe {
+        width: 56.48vw !important;
+        height: 28.44vw !important;
+
+    }
+
+}
+
+@media (min-width: 1289px) {
+
+    iframe {
+        border-radius: 1.25rem !important;
+
+    }
+
+}

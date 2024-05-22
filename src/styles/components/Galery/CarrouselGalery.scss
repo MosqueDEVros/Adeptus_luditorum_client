@@ -1,0 +1,159 @@
+// normalmente empezamos con mobilefirst pero en este caso el apartado mobile es muy diferente al tablet/pc 
+// por lo tanto empezamos tabletfirst y concretando tabler pequeña grandes y pc
+
+// estilo para el carrousel en general
+.swiper {
+  width: 100vw; /* Ancho al 100% del contenedor */
+  height: 100vh ;
+  margin: 5rem auto; /* Centrar horizontalmente */
+  overflow: hidden; /* Ocultar contenido que se desborde */
+}
+// esta tambien
+.swiper-slide{
+  width: 50vw;
+  height: 40vh;
+}
+
+.boxshadow{
+    width: 13rem;
+  height: 11rem;
+  background-color: transparent;
+filter: drop-shadow(13px 20px 14px rgba(0, 0, 0, 0.45));
+/* Estilos para cada figura en esta clase le damos un forma en partidular como celda de panal de abjea 
+ */
+.div-heaxgon {
+  background-color: white; /* Agregar un fondo */
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+}
+
+
+
+// clase reactiva que hace que cada figura este arriba o abajo  ya que si es top ira a arriba y bottom abajo las que contengan 
+//esta clase bajaran
+.div-heaxgon-bottom{
+  margin-top: 8rem;
+ 
+}
+// version tablet mediana
+@media (min-width:800px) {
+
+.boxshadow{
+    width: 14rem;
+  height: 14rem;
+    .div-heaxgon-bottom{
+
+  margin-top: 10rem;
+ 
+}
+
+}
+
+
+}
+
+// version tablet grandes
+@media (min-width:950px) {
+
+.boxshadow{
+    width: 18rem;
+  height: 16rem;
+
+    .div-heaxgon-bottom{
+  margin-top: 12rem;
+ 
+}
+
+}
+
+
+}
+
+// version pc
+@media (min-width:1400px) {
+
+
+.boxshadow{
+   width: 23.5rem;
+height: 20rem;
+}
+
+}
+
+
+// ----------> version movil
+
+
+@media (max-width:700px) {
+
+.swiper {
+  transform: rotate(90deg);
+  height: 30vh ;
+  overflow: hidden;
+  margin: 17rem ;
+     width: 190vw ; 
+}
+.swiper-slide{
+  
+        align-content: center;
+    margin: 0rem 3rem; 
+  height: 30vh;
+}
+
+.boxshadow{
+    width: 10rem;
+  height: 10rem;
+
+  background-color: transparent;
+filter: drop-shadow(13px 20px 14px rgba(0, 0, 0, 0.45));
+.div-heaxgon {
+  background-color: white; /* Agregar un fondo */
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+}
+
+.div-heaxgon-bottom{
+  margin-top: 0rem;
+ 
+}
+
+
+}
+
+@media (max-width:380px) {
+
+.swiper {
+     width: 120vw !important; 
+       margin: 0rem !important;
+}
+
+.swiper-slide{
+  
+    margin: 0rem 6rem; 
+}
+}
+
+@media (max-width:430px) {
+
+.swiper {
+     width: 150vw !important; 
+       margin: 12rem !important;
+}
+
+.swiper-slide{
+  
+    margin: 0rem 6rem; 
+}
+}
+@media (max-width:475px) {
+
+.swiper {
+     width: 180vw !important; 
+       margin: 17rem !important;
+}
+
+.swiper-slide{
+  
+    margin: 0rem 6rem; 
+}
+}

@@ -10,11 +10,48 @@
 @import './components/NavBar/ComponentNavBar/LogoNavBar.scss';
 @import './components/NavBar/ComponentNavBar/IconsNavBar.scss';
 
+
+//componente galeria/carrousel
+@import './components/Galery/CarrouselGalery.scss';
+
+//componente map
+@import './components/Map/Map.scss';
+
+
+//componente AUTH
+@import './components/auth/SignUp.scss';
+@import './components/auth/LogIn.scss';
+@import './components/auth/AnimationLeft.scss';
+
+// componente button
+// button de login/signup
+@import './components/Buttom/BtnLogIn.scss';
+
+
 // PAGES
 
 // pagina index
 @import './pages/Index.scss';
 
+// pagina about
+@import './pages/AboutPage.scss';
 
 // pagina portada
 @import './pages/FrontPage.scss';
+
+
+// pagina galeria/carrousel
+@import './pages/GaleryPage.scss';
+
+// pagina de la localización dirección + map
+@import './pages/Location.scss';
+
+//pagina AUTH
+@import './pages/LogInPage.scss';
+@import './pages/SignUpPage.scss';
+
+// pagina eventos
+@import './pages/Events.scss';
+//componentes pagina eventos
+@import './components/Events/EventCard.scss';
+@import './components/Events/EventModal.scss';

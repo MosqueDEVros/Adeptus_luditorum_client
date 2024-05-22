@@ -1,0 +1,81 @@
+.fondo {
+
+    .donde-estamos {
+        @include font-rowdies-regular;
+        color: $colorSecondary;
+        text-align: center;
+        line-height: 6.5rem;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 50.9375rem;
+
+        .where-we-are {
+            font-size: 1.875rem;
+            width: 20.4375rem;
+            height: 5.125rem;
+            border-bottom: 0.0625rem solid $colorSecondary;
+        }
+
+        .address {
+            margin-top: 1.87rem;
+            color: #FFF;
+            text-align: center;
+            font-family: Inter;
+            font-size: 1rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+    }
+
+}
+
+//tablet
+@media (min-width: 768px) {
+    .fondo {
+        padding-top: 7.79vw;
+        height: 46.9375rem;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-image: url('/public/locationBG.png');
+        width: 100vw;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+
+        .donde-estamos {
+            width: 56.5vw;
+            height: 43.5vw;
+            margin: auto;
+
+            .where-we-are {
+                border: none;
+                width: 27.89vw;
+                height: 6.41vw;
+                font-size: 3.13vw;
+            }
+
+            .address {
+                margin: 1.25rem auto 1.25rem auto;
+                font-size: 1.25vw;
+
+                .br-display {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1280px) {
+
+    .fondo {
+        height: 55.8125rem;
+    }
+
+
+}

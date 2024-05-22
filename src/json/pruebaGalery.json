@@ -1,0 +1,97 @@
+[
+    {
+        "id": "S1",
+        "name": "HTML5",
+        "logoImage": "HTML5.svg"
+    },
+    {
+        "id": "S2",
+        "name": "CSS3",
+        "logoImage": "CSS3.svg"
+    },
+    {
+        "id": "S2",
+        "name": "JAVASCRIPT",
+        "logoImage": "JAVASCRIPT.svg"
+    },
+    {
+        "id": "S4",
+        "name": "REACT.JS",
+        "logoImage": "REACT.svg"
+    },
+    {
+        "id": "S5",
+        "name": "NODE.JS",
+        "logoImage": "NODE.svg"
+    },
+    {
+        "id": "S6",
+        "name": "MONGODB",
+        "logoImage": "MONGODB.svg"
+    },
+    {
+        "id": "S7",
+        "name": "EXPRESS.JS",
+        "logoImage": "EXPRESS.svg"
+    },
+    {
+        "id": "S8",
+        "name": "BOOTSTRAP",
+        "logoImage": "BOOTSTRAP.svg"
+    },
+    {
+        "id": "S10",
+        "name": "GRAPHQL",
+        "logoImage": "GRAPHQL.svg"
+    },
+    {
+        "id": "S11",
+        "name": "VUE.JS",
+        "logoImage": "VUE.svg"
+    },
+    {
+        "id": "S12",
+        "name": "VUETIFY",
+        "logoImage": "VUETIFY.svg"
+    },
+    {
+        "id": "S13",
+        "name": "FIREBASE",
+        "logoImage": "FIREBASE.svg"
+    },
+    {
+        "id": "S14",
+        "name": "TAILWIND",
+        "logoImage": "TAILWIND.svg"
+    },
+    {
+        "id": "S15",
+        "name": "GITHUB",
+        "logoImage": "GITHUB.svg"
+    },
+    {
+        "id": "S15",
+        "name": "NEXT.JS",
+        "logoImage": "NEXT.svg"
+    },
+    {
+        "id": "S15",
+        "name": "JQUERY",
+        "logoImage": "JQUERY.svg"
+    },
+    {
+        "id": "S15",
+        "name": "HBS",
+        "logoImage": "HBS.svg"
+    },
+    {
+        "id": "s16",
+        "name": "POSTMAN",
+        "logoImage": "POSTMAN.svg"
+    },
+    {
+        "id": "S15",
+        "name": "GIT",
+        "logoImage": "GIT.svg"
+    }
+]
