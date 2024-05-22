@@ -9,6 +9,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        height: 50.9375rem;
 
         .where-we-are {
             font-size: 1.875rem;
@@ -34,21 +35,33 @@
 //tablet
 @media (min-width: 768px) {
     .fondo {
+        padding-top: 7.79vw;
+        height: 46.9375rem;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-image: url('/public/locationBG.png');
+        width: 100vw;
+        background-size: cover;
+        background-repeat: no-repeat;
+
 
         .donde-estamos {
-            width: 45.2rem;
-            height: 32.7rem;
+            width: 56.5vw;
+            height: 43.5vw;
             margin: auto;
 
             .where-we-are {
                 border: none;
-                width: 22.3125rem;
-                height: 5.125rem;
-                font-size: 2.5rem;
+                width: 27.89vw;
+                height: 6.41vw;
+                font-size: 3.13vw;
             }
 
             .address {
                 margin: 1.25rem auto 1.25rem auto;
+                font-size: 1.25vw;
 
                 .br-display {
                     display: none;
@@ -61,14 +74,8 @@
 @media (min-width: 1280px) {
 
     .fondo {
-
-        justify-content: center;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        background: linear-gradient(0deg, rgba(3, 73, 174, 0.73) -4.81%, rgba(14, 59, 124, 0.83) 14.78%, #212121 86.05%),
-            url('./public/bg-location.png') lightgray 50% / cover no-repeat;
-        height: 60.8125rem;
-
+        height: 55.8125rem;
     }
+
+
 }
