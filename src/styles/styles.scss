@@ -44,3 +44,9 @@
 //pagina AUTH
 @import './pages/LogInPage.scss';
 @import './pages/SignUpPage.scss';
+
+// pagina eventos
+@import './pages/Events.scss';
+//componentes pagina eventos
+@import './components/Events/EventCard.scss';
+@import './components/Events/EventModal.scss';

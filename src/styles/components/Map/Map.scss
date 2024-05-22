@@ -1,13 +1,15 @@
 .map-container {
     text-align: center;
-    margin: 2.25rem auto 5.62rem auto;
+    padding: 1rem 0.5rem 1.12rem 0.5rem;
     flex-shrink: 0;
+    margin-top: 1.25rem;
 
     iframe {
         border-radius: 1.875rem;
         width: 16.375rem;
         height: 32.5625rem;
         border: none;
+        flex-shrink: 0;
     }
 }
 
@@ -15,8 +17,8 @@
 @media (min-width: 768px) {
 
     iframe {
-        width: 45.1875rem !important;
-        height: 22.75rem !important;
+        width: 56.48vw !important;
+        height: 28.44vw !important;
 
     }
 
