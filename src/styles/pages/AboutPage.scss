@@ -1,203 +1,207 @@
-.about_frame {
-    width: 23.4375rem;
-    height: 50.9375rem;
+.about_page {
+    display: inline-flex;
+    height: 42.9375rem;
+    flex-direction: column;
+    align-items: flex-end;
     flex-shrink: 0;
-    background: linear-gradient(301deg, rgba(0, 80, 157, 0.42) 0.64%, rgba(33, 33, 33, 0.81) 8.97%, #212121 49.23%), url(https://s3-alpha-sig.figma.com/img/5f86/8866/47e91bd7301c82d6d2df06980fa76adb?Expires=1716163200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=IVPlo5082409XcmZoDW0BDMZVpaO17pBl6Fxxlk2EUe3X1lTssNIDSJbxIKhfYcLlH5HywLVzgSYjuWki-z-n8gbz4lZA7-As-OHRX9HwDgF8gOG2eNOWviTrwNg1uvYKXsrLYrT-HHdYwh8EhMWyNxzlZhkNLlEnUb4467mMgRse~WfmP31YLYWrOwNTadFPFzILR9YcGlD8FDae4ZpOcvT3DqE8vQAF0m-7x4Hz8QEv3pv5NE14VqHDSWEXvb0vhqrPrVXL5hdmgeey9uhduspIiDeKBefR119uEwYVPl-m5idJPmBYehIOKCEQUXwu3LpMyei6P5ZLmNI4fJsbg__) lightgray -660px -12.202px / 388.267% 103.288% no-repeat;
 
-    .aboutPage {
+    .about_frame {
         display: flex;
         width: 23.4375rem;
         height: 48.0625rem;
-        padding: 0rem 1.25rem 5rem 1.6875rem;
+        padding: 0rem 1.875rem 5rem 1.875rem;
         flex-direction: column;
         align-items: flex-start;
         gap: 1.25rem;
-        flex-shrink: 0;
 
-        .tittle_frame {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
 
-            .tittle {
-                width: 20.4375rem;
-                height: 5.3125rem;
-                color: #74C4F5;
-                font-family: Rowdies;
-                font-size: 1.875rem;
-                font-style: normal;
-                font-weight: 400;
-                line-height: 6.5rem;
-                /* 346.667% */
-            }
-
-            .line {
-                width: 18.75rem;
-                height: 0.0625rem;
-                background: #74C4F5;
-            }
+        .background {
+            width: 39.8125rem;
+            height: 42.9375rem;
+            position: absolute;
+            background: linear-gradient(301deg, rgba(0, 80, 157, 0.42) 0.64%, rgba(33, 33, 33, 0.81) 8.97%, #212121 49.23%), url(https://s3-alpha-sig.figma.com/img/5f86/8866/47e91bd7301c82d6d2df06980fa76adb?Expires=1717372800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=ki9hK4pfqnVd-NiRMp~g07Clx4JLNAQfuYkSBx2Yrh1Nyb4mABhmXhjsfhlV8SYhAg~fK-6pfGx9LjkUVGTreNqJCd1f7wZn1eFBtOaAIJqZM60eQzN6DC9ZDs3QhlOzIjtANmzZMBpGQud41Pw7WvsARguEbghJQ7B9uSbKLMw-deZTiR5PSbk9NaXrZ45Qd~gJx-NNbY~Cnes5NxQRvi3zjw59tLTUGZh72hTAhrjfffbJr0IOvVMbN03uo2Cp~9FwVl13mhv1BrxgxU4vZmPdabKBf7Nh9I0Xt2BLiVlqVF3UW8OUpybOt2Lx1oHzDoAGzM5jumxkavnHyv0QGg__) lightgray 0px 0.643px / 100% 100.095% no-repeat;
+            right: 0;
+            background-position: right;
         }
 
-        .info {
-            width: 18.75rem;
-            height: 30.625rem;
-            flex-shrink: 0;
-            color: #FFF;
-            font-family: Inter;
-            font-size: 0.875rem;
-            font-style: normal;
-            font-weight: 400;
-            line-height: normal;
-
-            span {
-                @include font-intel-regular;
-                color: $colorSecondary;
-                font-size: 0.875rem;
-                line-height: normal;
-            }
-
-            .subtittle {
-                @include font-intel-bold;
-            }
-
-        }
-
-    }
-}
-
-@media (min-width: 768px) {
-    .about_frame {
-        width: 23.4375rem;
-        height: 50.9375rem;
-        flex-shrink: 0;
-        background: linear-gradient(301deg, rgba(0, 80, 157, 0.42) 0.64%, rgba(33, 33, 33, 0.81) 8.97%, #212121 49.23%), url(https://s3-alpha-sig.figma.com/img/5f86/8866/47e91bd7301c82d6d2df06980fa76adb?Expires=1716163200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=IVPlo5082409XcmZoDW0BDMZVpaO17pBl6Fxxlk2EUe3X1lTssNIDSJbxIKhfYcLlH5HywLVzgSYjuWki-z-n8gbz4lZA7-As-OHRX9HwDgF8gOG2eNOWviTrwNg1uvYKXsrLYrT-HHdYwh8EhMWyNxzlZhkNLlEnUb4467mMgRse~WfmP31YLYWrOwNTadFPFzILR9YcGlD8FDae4ZpOcvT3DqE8vQAF0m-7x4Hz8QEv3pv5NE14VqHDSWEXvb0vhqrPrVXL5hdmgeey9uhduspIiDeKBefR119uEwYVPl-m5idJPmBYehIOKCEQUXwu3LpMyei6P5ZLmNI4fJsbg__) lightgray -660px -12.202px / 388.267% 103.288% no-repeat;
-
-        .aboutPage {
+        .about_content {
             display: flex;
-            width: 23.4375rem;
-            height: 48.0625rem;
-            padding: 0rem 1.25rem 5rem 1.6875rem;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 1.25rem;
+            align-items: center;
+            gap: -10.5625rem;
             flex-shrink: 0;
+            z-index: 1;
 
-            .tittle_frame {
+            .text_frame {
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
+                gap: 2.125rem;
 
-                .tittle {
-                    width: 20.4375rem;
-                    height: 5.3125rem;
-                    color: #74C4F5;
-                    font-family: Rowdies;
-                    font-size: 1.875rem;
+                .tittle_frame {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 1.0625rem;
+
+                    .tittle {
+                        width: 20.4375rem;
+                        height: 5.3125rem;
+                        color: #74C4F5;
+                        font-family: Rowdies;
+                        font-size: 1.875rem;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 6.5rem;
+                        /* 260% */
+                    }
+
+                    .line {
+                        width: 18.75rem;
+                        height: 0.0625rem;
+                        background: #74C4F5;
+                    }
+                }
+
+                .info {
+                    width: 18.75rem;
+                    height: 30.625rem;
+                    color: #FFF;
+                    font-family: Inter;
+                    font-size: 0.875rem;
                     font-style: normal;
                     font-weight: 400;
-                    line-height: 6.5rem;
-                    /* 346.667% */
-                }
-
-                .line {
-                    width: 18.75rem;
-                    height: 0.0625rem;
-                    background: #74C4F5;
-                }
-            }
-
-            .info {
-                width: 18.75rem;
-                height: 30.625rem;
-                flex-shrink: 0;
-                color: #FFF;
-                font-family: Inter;
-                font-size: 0.875rem;
-                font-style: normal;
-                font-weight: 400;
-                line-height: normal;
-
-                span {
-                    @include font-intel-regular;
-                    color: $colorSecondary;
-                    font-size: 0.875rem;
                     line-height: normal;
-                }
 
-                .subtittle {
-                    @include font-intel-bold;
-                }
+                    span {
+                        color: #74C4F5;
+                        font-family: Inter;
+                        font-size: 0.875rem;
+                        font-style: normal;
+                        font-weight: 600;
+                        line-height: normal;
 
+                    }
+
+                    .subtittle {
+                        color: #74C4F5;
+                        font-family: Inter;
+                        font-size: 0.875rem;
+                        font-style: normal;
+                        font-weight: 800;
+                        line-height: normal;
+                    }
+                }
             }
-
         }
     }
 }
+
+@media (min-width: 768px) {}
 
 @media (min-width: 1280px) {
-    .about_frame {
-        width: 80.1875rem;
-        height: 46.1875rem;
+    .about_page {
+        display: inline-flex;
+        height: 42.9375rem;
+        flex-direction: column;
+        align-items: flex-end;
         flex-shrink: 0;
-        background: linear-gradient(301deg, rgba(0, 80, 157, 0.42) 0.64%, rgba(33, 33, 33, 0.81) 8.97%, #212121 49.23%), url(https://s3-alpha-sig.figma.com/img/5f86/8866/47e91bd7301c82d6d2df06980fa76adb?Expires=1716163200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=IVPlo5082409XcmZoDW0BDMZVpaO17pBl6Fxxlk2EUe3X1lTssNIDSJbxIKhfYcLlH5HywLVzgSYjuWki-z-n8gbz4lZA7-As-OHRX9HwDgF8gOG2eNOWviTrwNg1uvYKXsrLYrT-HHdYwh8EhMWyNxzlZhkNLlEnUb4467mMgRse~WfmP31YLYWrOwNTadFPFzILR9YcGlD8FDae4ZpOcvT3DqE8vQAF0m-7x4Hz8QEv3pv5NE14VqHDSWEXvb0vhqrPrVXL5hdmgeey9uhduspIiDeKBefR119uEwYVPl-m5idJPmBYehIOKCEQUXwu3LpMyei6P5ZLmNI4fJsbg__) lightgray 0px 0.701px / 100% 100.095% no-repeat;
 
-        .aboutPage {
+        .about_frame {
             display: flex;
-            flex-direction: column;
+            width: 80.0625rem;
+            padding: 4.625rem 7.25rem;
             justify-content: center;
-            align-items: flex-end;
-            gap: 0.625rem;
+            align-items: center;
+            gap: 2rem;
 
-            .tittle_frame {
+
+            .background {
+                width: 39.8125rem;
+                height: 42.9375rem;
+                position: absolute;
+                background: linear-gradient(301deg, rgba(0, 80, 157, 0.42) 0.64%, rgba(33, 33, 33, 0.81) 8.97%, #212121 49.23%), url(https://s3-alpha-sig.figma.com/img/5f86/8866/47e91bd7301c82d6d2df06980fa76adb?Expires=1717372800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=ki9hK4pfqnVd-NiRMp~g07Clx4JLNAQfuYkSBx2Yrh1Nyb4mABhmXhjsfhlV8SYhAg~fK-6pfGx9LjkUVGTreNqJCd1f7wZn1eFBtOaAIJqZM60eQzN6DC9ZDs3QhlOzIjtANmzZMBpGQud41Pw7WvsARguEbghJQ7B9uSbKLMw-deZTiR5PSbk9NaXrZ45Qd~gJx-NNbY~Cnes5NxQRvi3zjw59tLTUGZh72hTAhrjfffbJr0IOvVMbN03uo2Cp~9FwVl13mhv1BrxgxU4vZmPdabKBf7Nh9I0Xt2BLiVlqVF3UW8OUpybOt2Lx1oHzDoAGzM5jumxkavnHyv0QGg__) lightgray 0px 0.643px / 100% 100.095% no-repeat;
+                right: 0;
+                background-position: right;
+            }
+
+            .about_content {
                 display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 1.0625rem;
-
-                .tittle {
-                    width: 22.3125rem;
-                    height: 5.125rem;
-                    color: #74C4F5;
-                    font-family: Rowdies;
-                    font-size: 2.5rem;
-                    font-style: normal;
-                    font-weight: 400;
-                    line-height: 6.5rem;
-
-                }
-
-                .line {
-                    width: 48.75rem;
-                    height: 0.0625rem;
-                    background: #74C4F5;
-                }
-            }
-
-            .info {
-                width: 18.75rem;
-                height: 30.625rem;
+                width: 65.25rem;
+                align-items: center;
+                gap: -10.5625rem;
                 flex-shrink: 0;
-                color: #FFF;
-                font-family: Inter;
-                font-size: 0.875rem;
-                font-style: normal;
-                font-weight: 400;
-                line-height: normal;
+                z-index: 1;
 
-                span {
-                    @include font-intel-regular;
-                    color: $colorSecondary;
-                    font-size: 0.875rem;
-                    line-height: normal;
+                .text_frame {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 2.125rem;
+
+                    .tittle_frame {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        gap: 1.0625rem;
+
+                        .tittle {
+                            width: 22.3125rem;
+                            height: 5.125rem;
+                            color: #74C4F5;
+                            font-family: Rowdies;
+                            font-size: 2.5rem;
+                            font-style: normal;
+                            font-weight: 400;
+                            line-height: 6.5rem;
+                            /* 260% */
+                        }
+
+                        .line {
+                            width: 48.75rem;
+                            height: 0.0625rem;
+                            background: #74C4F5;
+                        }
+                    }
+
+                    .info {
+                        width: 35.75rem;
+                        height: 19.5625rem;
+                        color: #FFF;
+                        font-family: Inter;
+                        font-size: 0.875rem;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: normal;
+
+                        span {
+                            color: #74C4F5;
+                            font-family: Inter;
+                            font-size: 0.875rem;
+                            font-style: normal;
+                            font-weight: 600;
+                            line-height: normal;
+
+                        }
+
+                        .subtittle {
+                            color: #74C4F5;
+                            font-family: Inter;
+                            font-size: 0.875rem;
+                            font-style: normal;
+                            font-weight: 800;
+                            line-height: normal;
+                        }
+                    }
                 }
 
-                .subtittle {
-                    @include font-intel-bold;
+                .ilustration {
+                    width: 26.5rem;
+                    height: 32.6875rem;
+                    background: url(https://s3-alpha-sig.figma.com/img/bec5/0798/610a6266fec4a4a518f563a6d41d2551?Expires=1717372800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=YeIWs42IqQZnGuJzBVilohKZz4sWCWqlTi2Jq6OLqBAxHXu1nKuoumvvyZWNUxJsaNIadMCG6VRh-HcqrmvbPlLgYZ8d5Crw0YiFzhqJFqwuODXqiQgf1pD5-OP~GI7BxZetL3NQRmNcIO~aQlEZErHoa8~SzIzc3Hmcow7ufYKJYcP24k-s5lGtYkaj5eyAdDHZYTVmNo5YhD58O5KtrE2zHK7wxrMb0OyLazCXQDaBaPC-DdxpQP3BWlnhCo8Roa5elyQTJDaAPiTQyczKPrZH41SCO6mXyAgElM8zVI7gv95vVo55s9Xlj6uejYGktWO2HmGw5g-~-HEnc1GQQw__) lightgray 50% / cover no-repeat;
+                    background-color: transparent;
+                    z-index: 1;
                 }
-
             }
-
         }
     }
-
 }
