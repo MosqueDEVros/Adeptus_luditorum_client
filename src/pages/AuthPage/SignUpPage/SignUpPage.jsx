@@ -1,8 +1,8 @@
 import AnimationLeft from "../../../components/Auth/AnimationLeftScreen/AnimationLeft"
-import LogIn from "../../../components/Auth/LogIn/LogIn"
+import SignUp from "../../../components/Auth/SignUp/SignUp"
 import BtnLogIn from "../../../components/Buttom/BtnLogIn"
 
-const LogInPage = () => {
+const SignUpPage = () => {
     return (
         <section className="block-secction-total-LogIn">
             <AnimationLeft />
@@ -11,13 +11,11 @@ const LogInPage = () => {
                     text1='SignUp'
                     text2='LogIn'
                 />
-                <LogIn
-
-                />
+                <SignUp />
             </div>
 
         </section>
     )
 }
 
-export default LogInPage
+export default SignUpPage

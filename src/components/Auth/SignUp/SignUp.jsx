@@ -1,7 +1,12 @@
 
 const SignUp = () => {
     return (
-        <div>SignUp</div>
+        <div className="block-logIn">
+            <div className="form-logIn">
+                registrooooo
+            </div>
+
+        </div>
     )
 }
 

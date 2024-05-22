@@ -5,7 +5,7 @@
 .swiper {
   width: 100vw; /* Ancho al 100% del contenedor */
   height: 100vh ;
-  margin: 3rem auto; /* Centrar horizontalmente */
+  margin: 5rem auto; /* Centrar horizontalmente */
   overflow: hidden; /* Ocultar contenido que se desborde */
 }
 // esta tambien
@@ -16,7 +16,7 @@
 
 .boxshadow{
     width: 13rem;
-  height: 12rem;
+  height: 11rem;
   background-color: transparent;
 filter: drop-shadow(13px 20px 14px rgba(0, 0, 0, 0.45));
 /* Estilos para cada figura en esta clase le damos un forma en partidular como celda de panal de abjea 
@@ -35,13 +35,28 @@ filter: drop-shadow(13px 20px 14px rgba(0, 0, 0, 0.45));
   margin-top: 8rem;
  
 }
+// version tablet mediana
+@media (min-width:800px) {
 
+.boxshadow{
+    width: 14rem;
+  height: 14rem;
+    .div-heaxgon-bottom{
+
+  margin-top: 10rem;
+ 
+}
+
+}
+
+
+}
 
 // version tablet grandes
 @media (min-width:950px) {
 
 .boxshadow{
-    width: 17rem;
+    width: 18rem;
   height: 16rem;
 
     .div-heaxgon-bottom{
@@ -59,81 +74,86 @@ filter: drop-shadow(13px 20px 14px rgba(0, 0, 0, 0.45));
 
 
 .boxshadow{
-   width: 22rem;
-height: 22rem;
+   width: 23.5rem;
+height: 20rem;
 }
 
 }
 
 
+// ----------> version movil
 
 
-/* versión móvil global */
+@media (max-width:700px) {
 
-@media (min-width: 320px) and (max-width: 505px) {
-  .swiper {
-  transform: rotate(91deg);
-   margin: 12rem 8rem; 
- 
+.swiper {
+  transform: rotate(90deg);
+  height: 30vh ;
+  overflow: hidden;
+  margin: 17rem ;
+     width: 190vw ; 
 }
-
-.div-heaxgon {
-  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-  transform: rotate(-91deg); /* Rotar el elemento 90 grados en sentido horario */
-}
-
-
-// esta tambien
 .swiper-slide{
-  width: 20vw;
-  height: 20vh;
+  
+        align-content: center;
+    margin: 0rem 3rem; 
+  height: 30vh;
 }
 
 .boxshadow{
     width: 10rem;
   height: 10rem;
-    background-color: transparent;
-filter: drop-shadow(7.848px 12.074px 8.452px rgba(0, 0, 0, 0.45));}
+
+  background-color: transparent;
+filter: drop-shadow(13px 20px 14px rgba(0, 0, 0, 0.45));
+.div-heaxgon {
+  background-color: white; /* Agregar un fondo */
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+}
 
 .div-heaxgon-bottom{
-  margin-top: 8rem;
+  margin-top: 0rem;
  
 }
 
 
-  }
+}
 
-/* versión móvil S */
-@media (min-width: 320px) and (max-width: 350px) {
+@media (max-width:380px) {
+
 .swiper {
-  transform: rotate(91deg);
-   width: 180vw; /* Ancho al 100% del contenedor */
-   height: 40vh;
+     width: 120vw !important; 
+       margin: 0rem !important;
 }
 
-
+.swiper-slide{
+  
+    margin: 0rem 6rem; 
+}
 }
 
-/* versión móvil M */
-@media (min-width: 350px) and (max-width: 380px) {
+@media (max-width:430px) {
+
 .swiper {
-   width: 170vw; /* Ancho al 100% del contenedor */
-   height: 40vh;
+     width: 150vw !important; 
+       margin: 12rem !important;
 }
 
-
+.swiper-slide{
+  
+    margin: 0rem 6rem; 
 }
+}
+@media (max-width:475px) {
 
-/* versión móvil L */
-@media (min-width: 380px) and (max-width: 450px) {
 .swiper {
-   width: 150vw; /* Ancho al 100% del contenedor */
-   height: 40vh;
+     width: 180vw !important; 
+       margin: 17rem !important;
 }
 
-
+.swiper-slide{
+  
+    margin: 0rem 6rem; 
 }
-
-
-
-
+}

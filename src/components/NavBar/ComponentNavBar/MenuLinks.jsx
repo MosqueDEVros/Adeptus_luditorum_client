@@ -32,6 +32,14 @@ const MenuLinks = () => {
             pageContact.scrollIntoView({ behavior: 'smooth' });
         }
     }
+    // DOM que te empuja a contacto esta conectado a un ref de contacto en algun lugar del index
+    function scrollToContact() {
+        const pageContact = document.getElementById('Event');
+        if (pageContact) {
+            pageContact.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
 
 
 
@@ -46,6 +54,9 @@ const MenuLinks = () => {
             </Link>
             <Link href="#" onClick={scrollToGalery} className="navbar-link">
                 GALERÍA
+            </Link>
+            <Link href="#" onClick={scrollToHome} className="navbar-link">
+                EVENTOS
             </Link>
             <Link href="#" onClick={scrollToContact} className="navbar-link">
                 CONTACTO

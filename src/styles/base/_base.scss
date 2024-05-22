@@ -6,10 +6,6 @@ $bgPrimary: rgba(33, 33, 33, 1);
 
 
 
-
-
-
-
 @mixin rowJC {
     display: flex;
     flex-flow: row nowrap;
@@ -79,6 +75,7 @@ p {
     display: none;
 }
 
-.nav-bar-block {
-    display: block;
+.nav-bar-block{
+display: block;
 }
+

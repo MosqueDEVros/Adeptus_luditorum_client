@@ -19,6 +19,7 @@ const CarrouselGalery = () => {
     };
 
     return (
+
         <Swiper
             // imagenes que apareceran en el carrusel
             slidesPerView={5}
