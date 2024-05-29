@@ -75,7 +75,34 @@ p {
     display: none;
 }
 
-.nav-bar-block{
-display: block;
+.nav-bar-block {
+    display: block;
 }
 
+@mixin button-style {
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    button {
+        background-color: #74C4F5;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 50px;
+        width: 8.375rem;
+        height: 2.5rem;
+        cursor: pointer;
+        text-align: center;
+        transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+        background-color: #0349AE;
+    }
+
+    button:focus {
+        outline: none;
+    }
+}
