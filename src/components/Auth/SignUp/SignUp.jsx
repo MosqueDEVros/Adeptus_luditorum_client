@@ -1,35 +1,32 @@
 import React, { useState } from 'react';
 import Modal from '../ModalConfirm/ModalConfirm'; // Asegúrate de tener la ruta correcta al componente ModalConfirm
+import { useForm } from 'react-hook-form';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
 const SignUp = () => {
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [confirmPassword, setConfirmPassword] = useState('');
-    const [error, setError] = useState('');
     const [modalOpen, setModalOpen] = useState(false);
+    const [error, setError] = useState('');
+    const [showPassword, setShowPassword] = useState(false);
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        if (password !== confirmPassword) {
+    const {
+        register,
+        formState: { errors },
+        handleSubmit,
+        reset,
+    } = useForm();
+
+    const onSubmit = (data) => {
+        if (data.password !== data.confirmPassword) {
             setError('Las contraseñas no coinciden');
             return;
         }
-
-        // Lógica para registrar los datos aquí
-        console.log('Nombre:', name);
-        console.log('Correo:', email);
-        console.log('Contraseña:', password);
-        // Lógica para registrar los datos aquí
 
         // Abrimos la ventana modal
         setModalOpen(true);
 
         // Limpiamos los campos y errores
-        setName('');
-        setEmail('');
-        setPassword('');
-        setConfirmPassword('');
+        reset();
         setError('');
     };
 
@@ -38,56 +35,73 @@ const SignUp = () => {
         setModalOpen(false);
     };
 
+    const togglePasswordVisibility = () => {
+        setShowPassword(!showPassword);
+    };
+
     return (
         <div className="form-signUp">
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="input-group">
                     <label>Nombre</label>
                     <input
                         type="text"
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
-                        required
                         placeholder="Introduce tu nombre"
+                        {...register("name", { required: 'El nombre es obligatorio', maxLength: { value: 15, message: 'El nombre debe tener menos de 15 caracteres' } })}
                     />
-                </div>
-
-                <div className="input-group">
-                    <label>Contraseña</label>
-                    <input
-                        type="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        required
-                        placeholder="Introduce una contraseña"
-                    />
-                </div>
-
-                <div className="input-group">
-                    <label>Repetir Contraseña</label>
-                    <input
-                        type="password"
-                        value={confirmPassword}
-                        onChange={(e) => setConfirmPassword(e.target.value)}
-                        required
-                        placeholder="Repite la contraseña elegida"
-                    />
+                    {errors.name && <p className="error-message">{errors.name.message}</p>}
                 </div>
 
                 <div className="input-group">
                     <label>Correo</label>
                     <input
                         type="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        required
                         placeholder="Introduce un correo electrónico"
+                        {...register("email", { required: 'El correo es obligatorio', pattern: { value: /^\S+@\S+$/i, message: 'El formato del correo no es válido' } })}
                     />
+                    {errors.email && <p className="error-message">{errors.email.message}</p>}
+                </div>
+
+                <div className="input-group">
+                    <label>Contraseña</label>
+                    <div className="password-wrapper">
+                        <input
+                            type={showPassword ? "text" : "password"}
+                            placeholder="Introduce una contraseña"
+                            {...register("password", { required: 'La contraseña es obligatoria', minLength: { value: 6, message: 'La contraseña debe tener al menos 6 caracteres' } })}
+                        />
+
+                        <div className='posicion-error'>
+                            <button type="button" className="password-toggle" onClick={togglePasswordVisibility}>
+                                <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} className="password-icon" />
+                            </button>
+                            {errors.password && <p className="error-message">{errors.password.message}</p>}
+                        </div>
+                    </div>
+                </div>
+
+                <div className="input-group">
+                    <label>Repetir Contraseña</label>
+                    <div className="password-wrapper">
+                        <input
+                            type={showPassword ? "text" : "password"}
+                            placeholder="Repite la contraseña elegida"
+                            {...register("confirmPassword", { required: 'Debe confirmar la contraseña' })}
+                        />
+
+                        <div className='posicion-error'>
+                            <button type="button" className="password-toggle" onClick={togglePasswordVisibility}>
+                                <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} className="password-icon" />
+                            </button>
+                            {errors.confirmPassword && <p className="error-message">{errors.confirmPassword.message}</p>}
+                        </div>
+
+                    </div>
                 </div>
 
                 {error && <p className="error-message">{error}</p>}
 
-                <div className='button-container'>
+                <div className="button-container">
                     <button type="submit" className="submit-button">Aceptar</button>
                 </div>
             </form>
