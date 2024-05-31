@@ -1,17 +1,38 @@
-.block-logIn-SignUp{
-
-    
-}
-
-
-.left-block, .rigth-block{
+.no-decoration {
     text-decoration: none;
-    
 }
 
-.left-block{
-background-color:var($bgPrimary) ;
+.block-logIn-SignUp {
+    display: flex;
+    justify-content: flex-end;
 }
-.rigth-block{
-background-color:var($bgPrimary) ;
+
+.left-block,
+.right-block {
+    color: #FFF;
+    font-family: Inter, sans-serif;
+    font-size: 0.875rem;
+    line-height: 2.5rem;
+    text-align: center;
+    width: 5.5625rem;
+    height: 2.5rem;
+    padding: 0rem 0.625rem;
+    background: #4B748D;
+    border: none;
+}
+
+.left-block:focus,
+.right-block:focus {
+    background: #74C4F5;
+    box-shadow: 0px 0px 8px 0px black;
+    outline: none;
+}
+
+
+.left-block {
+    border-radius: 1.25rem 0rem 0rem 1.25rem;
+}
+
+.right-block {
+    border-radius: 0rem 1.25rem 1.25rem 0rem;
 }
