@@ -6,6 +6,7 @@ $bgPrimary: rgba(33, 33, 33, 1);
 
 
 
+
 @mixin rowJC {
     display: flex;
     flex-flow: row nowrap;
@@ -79,6 +80,8 @@ p {
     display: block;
 }
 
+
+
 @mixin button-style {
 
     width: 100%;
@@ -99,10 +102,34 @@ p {
     }
 
     button:hover {
-        background-color: #0349AE;
+        background-color: $colorTertiary;
     }
 
     button:focus {
         outline: none;
     }
+}
+
+
+// cambios css formulario
+.password-toggle {
+    margin-top: 0.5rem;
+
+}
+
+.error-message {
+    text-align: end;
+}
+
+.password-icon {
+    color: $colorSecondary;
+    /* Cambia el color del icono aquí */
+}
+
+.error-message {
+    margin-top: 0rem;
+}
+
+.posicion-error {
+    @include rowJB
 }
