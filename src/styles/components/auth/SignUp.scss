@@ -16,6 +16,8 @@
         .input-group {
             margin-bottom: 3vh;
             height: 9.62vh;
+            display: flex;
+            flex-direction: column;
 
             label {
                 color: #74C4F5;
@@ -45,8 +47,11 @@
             input::placeholder {
                 color: #686D74;
             }
-        }
 
+            .password-wrapper {
+                @include password-icon
+            }
+        }
     }
 
     .error-message {
@@ -55,13 +60,11 @@
     }
 
     .button-container {
-
         @include button-style
     }
 
     .submit-button {
         margin-top: 10vh;
-
     }
 }
 
@@ -71,5 +74,4 @@
         align-items: center;
         margin: 1.62rem 2rem 5.81rem 2rem;
     }
-
 }

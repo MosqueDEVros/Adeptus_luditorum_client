@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Modal from '../ModalConfirm/ModalConfirm'; // Asegúrate de tener la ruta correcta al componente ModalConfirm
+import Modal from '../ModalConfirm/ModalConfirm';
 import { useForm } from 'react-hook-form';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
@@ -22,16 +22,13 @@ const SignUp = () => {
             return;
         }
 
-        // Abrimos la ventana modal
         setModalOpen(true);
 
-        // Limpiamos los campos y errores
         reset();
         setError('');
     };
 
     const closeModal = () => {
-        // Función para cerrar la ventana modal
         setModalOpen(false);
     };
 
@@ -70,14 +67,11 @@ const SignUp = () => {
                             placeholder="Introduce una contraseña"
                             {...register("password", { required: 'La contraseña es obligatoria', minLength: { value: 6, message: 'La contraseña debe tener al menos 6 caracteres' } })}
                         />
-
-                        <div className='posicion-error'>
-                            <button type="button" className="password-toggle" onClick={togglePasswordVisibility}>
-                                <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} className="password-icon" />
-                            </button>
-                            {errors.password && <p className="error-message">{errors.password.message}</p>}
-                        </div>
+                        <button type="button" className="password-toggle" onClick={togglePasswordVisibility}>
+                            <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} className="password-icon" />
+                        </button>
                     </div>
+                    {errors.password && <p className="error-message">{errors.password.message}</p>}
                 </div>
 
                 <div className="input-group">
@@ -88,15 +82,11 @@ const SignUp = () => {
                             placeholder="Repite la contraseña elegida"
                             {...register("confirmPassword", { required: 'Debe confirmar la contraseña' })}
                         />
-
-                        <div className='posicion-error'>
-                            <button type="button" className="password-toggle" onClick={togglePasswordVisibility}>
-                                <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} className="password-icon" />
-                            </button>
-                            {errors.confirmPassword && <p className="error-message">{errors.confirmPassword.message}</p>}
-                        </div>
-
+                        <button type="button" className="password-toggle" onClick={togglePasswordVisibility}>
+                            <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} className="password-icon" />
+                        </button>
                     </div>
+                    {errors.confirmPassword && <p className="error-message">{errors.confirmPassword.message}</p>}
                 </div>
 
                 {error && <p className="error-message">{error}</p>}

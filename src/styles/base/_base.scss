@@ -121,10 +121,24 @@ p {
     text-align: end;
 }
 
-.password-icon {
+
+@mixin password-icon {
     color: $colorSecondary;
-    /* Cambia el color del icono aquí */
+    position: relative;
+
+    .password-toggle {
+        transform: translateY(-3.25vw);
+        position: absolute;
+        right: 0;
+        padding: 0.5rem;
+    }
+
+    .password-icon {
+        color: $colorSecondary;
+        font-size: 1rem;
+    }
 }
+
 
 .error-message {
     margin-top: 0rem;

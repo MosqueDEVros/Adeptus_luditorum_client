@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Modal from '../ModalConfirm/ModalConfirm';
+import Modal from '../ModalConfirm/ModalConfirm'; // Asegúrate de tener la ruta correcta al componente ModalConfirm
 import { useForm } from 'react-hook-form';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
@@ -48,19 +48,17 @@ const LogIn = () => {
                 </div>
                 <div className="input-group">
                     <label>Contraseña</label>
-                    <div className="password-input-wrapper">
+                    <div className="password-wrapper">
                         <input
                             type={showPassword ? "text" : "password"}
                             placeholder="Introduce una contraseña"
                             {...register("password", { required: 'La contraseña es obligatoria', minLength: { value: 6, message: 'La contraseña debe tener al menos 6 caracteres' } })}
                         />
-                        <div className='posicion-error'>
-                            <button type="button" className="password-toggle" onClick={togglePasswordVisibility}>
-                                <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} className="password-icon" />
-                            </button>
-                            {errors.password && <p className="error-message">{errors.password.message}</p>}
-                        </div>
+                        <button type="button" className="password-toggle" onClick={togglePasswordVisibility}>
+                            <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} className="password-icon" />
+                        </button>
                     </div>
+                    {errors.password && <p className="error-message">{errors.password.message}</p>}
                 </div>
 
                 {error && <p className="error-message">{error}</p>}
