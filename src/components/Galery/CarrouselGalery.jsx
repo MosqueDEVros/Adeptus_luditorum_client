@@ -1,53 +1,85 @@
-import { useState } from 'react';
-import pruebaGalery from '../../json/pruebaGalery.json';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import Modal from 'react-modal';
 
-// libreria de carrusel elementos html 
+// Librería de carrusel elementos html 
 import { Swiper, SwiperSlide } from 'swiper/react';
-// funcionalidades del carrusel
+// Funcionalidades del carrusel
 import { Autoplay, Navigation } from 'swiper/modules';
 
-// css del carrusel
+// CSS del carrusel
 import 'swiper/css';
 import 'swiper/css/pagination';
+
 const CarrouselGalery = () => {
     const [initialPosition, setInitialPosition] = useState('bottom');
+    const [photos, setPhotos] = useState([]);
+    const [isOpen, setIsOpen] = useState(false);
+    const [selectedPhoto, setSelectedPhoto] = useState(null);
+    // aqui va el token de la empresa de instagram
+    const accessToken = ''; // Reemplaza con tu Access Token
 
+    useEffect(() => {
+        const fetchPhotos = async () => {
+            try {
+                const response = await axios.get(`https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,thumbnail_url,permalink&access_token=${accessToken}`);
+                setPhotos(response.data.data);
+            } catch (error) {
+                console.error('Error fetching photos from Instagram', error);
+            }
+        };
+        fetchPhotos();
+    }, []);
 
-    // funcion para generar reactividad en cada imagen de SwiperSlide hace que se alterne cada div con una clase 
+    // Función para generar reactividad en cada imagen de SwiperSlide
     const toggleInitialPosition = () => {
         setInitialPosition(initialPosition === 'bottom' ? 'top' : 'bottom');
     };
 
-    return (
+    // Función para abrir el modal
+    const openModal = (photo) => {
+        setSelectedPhoto(photo);
+        setIsOpen(true);
+    };
 
-        <Swiper
-            // imagenes que apareceran en el carrusel
-            slidesPerView={5}
-            // espacio entre ellas
-            spaceBetween={-10}
-            // funcion para generar clase dinamica y entre en el carrusel
-            onInit={toggleInitialPosition}
-            onSlideChange={toggleInitialPosition}
-            // velocidad  a la que va el carrusel
-            autoplay={{
-                delay: 4000,
-                disableOnInteraction: false,
-            }}
-            // para poder desplazarte mediante el cursos por el carrusel sin necesidad de esperar el tiempo para que se active el desplazamiento
-            navigation={true}
-            // debe llamarse aqui las funcionalidades que le daremos al carrusel por la libreria que la requiere aqui y debemos importar
-            modules={[Autoplay, Navigation]}
-        >
-            {pruebaGalery.map((eachPrueba, index) => (
-                <SwiperSlide key={`${eachPrueba.id}-${index}`} style={{ order: index }}>
-                    <div className='boxshadow'>
-                        {/* 1 aqui llamaremos cada imagen de una base de dato de manera dinamica mientras tenemos una para comprobar */}
-                        {/* 2 la clase esta creada una base y otra de manera dinamica para posicionar de manera par las imagenes */}
-                        <img src='../../../public/bg-location.png' className={`div-heaxgon ${index % 2 === 0 ? 'div-heaxgon-top' : 'div-heaxgon-bottom'}`} style={{ width: '100%', height: '100%' }} />
-                    </div>
-                </SwiperSlide>
-            ))}
-        </Swiper>
+    // Función para cerrar el modal
+    const closeModal = () => {
+        setIsOpen(false);
+        setSelectedPhoto(null);
+    };
+
+    return (
+        <div className='componentCarrusel'>
+            <Swiper
+                slidesPerView={5}
+                spaceBetween={-10}
+                onInit={toggleInitialPosition}
+                onSlideChange={toggleInitialPosition}
+                autoplay={{
+                    delay: 4000,
+                    disableOnInteraction: false,
+                }}
+                navigation={true}
+                modules={[Autoplay, Navigation]}
+            >
+                {photos.map((eachPrueba, index) => (
+                    <SwiperSlide key={`${eachPrueba.id}-${index}`} style={{ order: index }}>
+                        <div className='boxshadow' onClick={() => openModal(eachPrueba)}>
+                            <img src={eachPrueba.media_url} className={`div-heaxgon ${index % 2 === 0 ? 'div-heaxgon-top' : 'div-heaxgon-bottom'}`} style={{ width: '100%', height: '100%' }} />
+                        </div>
+                    </SwiperSlide>
+                ))}
+            </Swiper>
+
+            {selectedPhoto && (
+                <Modal isOpen={isOpen} onRequestClose={closeModal} contentLabel="Image Modal">
+                    <button onClick={closeModal}>
+                        <p className='closeButtonModal' >X</p>
+                    </button>
+                    <img src={selectedPhoto.media_url} style={{ width: '100%' }} />
+                </Modal>
+            )}
+        </div>
     );
 }
 
