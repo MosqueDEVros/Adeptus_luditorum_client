@@ -24,6 +24,9 @@ const ModalComponent = ({ isOpen, onRequestClose, imageUrl }) => (
         }}
     >
         <div className="image-container">
+            <button className="closeButtonModal" onClick={onRequestClose}>
+                <p>X</p>
+            </button>
             <img src={imageUrl} alt="Event" />
         </div>
     </Modal>
