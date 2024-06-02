@@ -17,7 +17,7 @@ const CarrouselGalery = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [selectedPhoto, setSelectedPhoto] = useState(null);
     // aqui va el token de la empresa de instagram
-    const accessToken = 'IGQWROd0VlYmNqWFVCb1FlQUwyTEZALMTMzYjFaUUxWemp5X19yT05MOVY0NzVUUEx4a1M4eUlWVV9wWDZAlbXpPRm9UMmVfMzl4ZAnNrWFF6bzdMMmpTa08yVDlFc1FiUkdwV2lkYTM2SW9LQU8yS2lINjRQUjVJa28ZD'; // Reemplaza con tu Access Token
+    const accessToken = 'IGQWRPYXhDS1A5WENKQTd6YzctYnVlTmc5b2JieFBhMWFhRjgyc1JPQ2xlc2hWQXlxczlPdXVFWFNxOGRjaW1NVVdqOXY4a1VTOVZAFcXQwUFFwTndwWjBOUlNLWDJzRWxTZAXRsWTR2X1J3WEVLanhRbEp0WUFtV0kZD'; // Reemplaza con tu Access Token
 
     useEffect(() => {
         const fetchPhotos = async () => {
