@@ -1,4 +1,4 @@
-import AboutPAge from "../AboutPage/AboutPAge"
+import AboutPage from "../AboutPage/AboutPage"
 import FrontPage from "../FrontPage/FrontPage"
 import { GaleryPage } from "../GaleryPage/GaleryPage"
 import Location from "../Location/Location"
@@ -11,7 +11,7 @@ const Index = () => {
 
         <>
             <FrontPage />
-            <AboutPAge />
+            <AboutPage />
             <GaleryPage />
             <Events />
             <Location />

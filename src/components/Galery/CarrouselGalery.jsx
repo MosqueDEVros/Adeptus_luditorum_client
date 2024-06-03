@@ -16,20 +16,34 @@ const CarrouselGalery = () => {
     const [photos, setPhotos] = useState([]);
     const [isOpen, setIsOpen] = useState(false);
     const [selectedPhoto, setSelectedPhoto] = useState(null);
-    // aqui va el token de la empresa de instagram
-    const accessToken = 'IGQWRPYXhDS1A5WENKQTd6YzctYnVlTmc5b2JieFBhMWFhRjgyc1JPQ2xlc2hWQXlxczlPdXVFWFNxOGRjaW1NVVdqOXY4a1VTOVZAFcXQwUFFwTndwWjBOUlNLWDJzRWxTZAXRsWTR2X1J3WEVLanhRbEp0WUFtV0kZD'; // Reemplaza con tu Access Token
+    const accessToken = 'IGQWRQQW9oVEI3a2pMakRBVkg0RjVoMmJpdHVpalYzTTVMTmJXTnJQZAWxzdTRVY2ZARU2poQnJPeE1PNXNNTDZAtQWc1R1JFMXRFMEFtUC1lSjJyR3lad1VwanFzdm9UeFplRlluRkRkU0ltcVhNM2M0bnVIWkNZAS0kZD'; // Reemplaza con tu Access Token
 
     useEffect(() => {
         const fetchPhotos = async () => {
-            try {
-                const response = await axios.get(`https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,thumbnail_url,permalink&access_token=${accessToken}`);
-                setPhotos(response.data.data);
-            } catch (error) {
-                console.error('Error fetching photos from Instagram', error);
+            let url = `https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,thumbnail_url,permalink&limit=4&access_token=${accessToken}`;
+            let allPhotos = [];
+            const maxPhotos = 50;
+
+            while (url && allPhotos.length < maxPhotos) {
+                try {
+                    const response = await axios.get(url);
+                    const data = response.data;
+                    allPhotos = [...allPhotos, ...data.data];
+                    url = data.paging?.next || null;
+                } catch (error) {
+                    console.error('Error fetching photos from Instagram', error);
+                    break;
+                }
             }
+
+            const filterAllPhotos = allPhotos.filter(eachPhoto => eachPhoto.media_type !== "VIDEO")
+
+            console.log('----->>>>', filterAllPhotos)
+            setPhotos(filterAllPhotos.slice(0, maxPhotos));
         };
+
         fetchPhotos();
-    }, []);
+    }, [accessToken]);
 
     // Función para generar reactividad en cada imagen de SwiperSlide
     const toggleInitialPosition = () => {
@@ -74,7 +88,7 @@ const CarrouselGalery = () => {
             {selectedPhoto && (
                 <Modal isOpen={isOpen} onRequestClose={closeModal} contentLabel="Image Modal">
                     <button onClick={closeModal}>
-                        <p className='closeButtonModal' >X</p>
+                        <p className='closeButtonModal'>X</p>
                     </button>
                     <img src={selectedPhoto.media_url} style={{ width: '100%' }} />
                 </Modal>
