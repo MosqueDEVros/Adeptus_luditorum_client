@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import axios from 'axios';
 import Modal from 'react-modal';
 
@@ -6,17 +6,21 @@ import Modal from 'react-modal';
 import { Swiper, SwiperSlide } from 'swiper/react';
 // Funcionalidades del carrusel
 import { Autoplay, Navigation } from 'swiper/modules';
+import Spiner from '../Spinner/Spiner';
 
 // CSS del carrusel
 import 'swiper/css';
 import 'swiper/css/pagination';
+
+// Ensure Modal is properly initialized
+Modal.setAppElement('#root'); // Adjust according to your app's root element
 
 const CarrouselGalery = () => {
     const [initialPosition, setInitialPosition] = useState('bottom');
     const [photos, setPhotos] = useState([]);
     const [isOpen, setIsOpen] = useState(false);
     const [selectedPhoto, setSelectedPhoto] = useState(null);
-    const accessToken = 'IGQWRQQW9oVEI3a2pMakRBVkg0RjVoMmJpdHVpalYzTTVMTmJXTnJQZAWxzdTRVY2ZARU2poQnJPeE1PNXNNTDZAtQWc1R1JFMXRFMEFtUC1lSjJyR3lad1VwanFzdm9UeFplRlluRkRkU0ltcVhNM2M0bnVIWkNZAS0kZD'; // Reemplaza con tu Access Token
+    const accessToken = 'IGQWRQaUdJdzFjSGNYYmpZAM2NZASi1tVkFFTmZAQdHF4ejBCVDZAyaTJNeTQ4MjFjYkFGNGltU2ZAYbUg5bUNMLUhldlFaMkFpVVVicE45TGFqU2Q0cnhqV3RSTFFGX2tpRExBSEttbXMyeVVQNGE5VVNVck9TTW5SMjQZD'; // Reemplaza con tu Access Token
 
     useEffect(() => {
         const fetchPhotos = async () => {
@@ -36,10 +40,10 @@ const CarrouselGalery = () => {
                 }
             }
 
-            const filterAllPhotos = allPhotos.filter(eachPhoto => eachPhoto.media_type !== "VIDEO")
+            const filterAllPhotos = allPhotos.filter(eachPhoto => eachPhoto.media_type !== "VIDEO");
 
-            console.log('----->>>>', filterAllPhotos)
             setPhotos(filterAllPhotos.slice(0, maxPhotos));
+            console.log('----->>>>', allPhotos);
         };
 
         fetchPhotos();
@@ -62,39 +66,45 @@ const CarrouselGalery = () => {
         setSelectedPhoto(null);
     };
 
+    const isLoaderPhoto = useMemo(() => photos.length === 0, [photos]);
+
     return (
         <div className='componentCarrusel'>
-            <Swiper
-                slidesPerView={5}
-                spaceBetween={-10}
-                onInit={toggleInitialPosition}
-                onSlideChange={toggleInitialPosition}
-                autoplay={{
-                    delay: 4000,
-                    disableOnInteraction: false,
-                }}
-                navigation={true}
-                modules={[Autoplay, Navigation]}
-            >
-                {photos.map((eachPrueba, index) => (
-                    <SwiperSlide key={`${eachPrueba.id}-${index}`} style={{ order: index }}>
-                        <div className='boxshadow' onClick={() => openModal(eachPrueba)}>
-                            <img src={eachPrueba.media_url} className={`div-heaxgon ${index % 2 === 0 ? 'div-heaxgon-top' : 'div-heaxgon-bottom'}`} style={{ width: '100%', height: '100%' }} />
-                        </div>
-                    </SwiperSlide>
-                ))}
-            </Swiper>
+            {isLoaderPhoto ? (
+                <Spiner />
+            ) : (
+                <Swiper
+                    slidesPerView={5}
+                    spaceBetween={-10}
+                    onInit={toggleInitialPosition}
+                    onSlideChange={toggleInitialPosition}
+                    autoplay={{
+                        delay: 4000,
+                        disableOnInteraction: false,
+                    }}
+                    navigation={true}
+                    modules={[Autoplay, Navigation]}
+                >
+                    {photos.map((eachPrueba, index) => (
+                        <SwiperSlide key={`${eachPrueba.id}-${index}`} style={{ order: index }}>
+                            <div className='boxshadow' onClick={() => openModal(eachPrueba)}>
+                                <img src={eachPrueba.media_url} className={`div-heaxgon ${index % 2 === 0 ? 'div-heaxgon-top' : 'div-heaxgon-bottom'}`} style={{ width: '100%', height: '100%' }} alt={`Slide ${index}`} />
+                            </div>
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
+            )}
 
             {selectedPhoto && (
                 <Modal isOpen={isOpen} onRequestClose={closeModal} contentLabel="Image Modal">
                     <button onClick={closeModal}>
                         <p className='closeButtonModal'>X</p>
                     </button>
-                    <img src={selectedPhoto.media_url} style={{ width: '100%' }} />
+                    <img src={selectedPhoto.media_url} style={{ width: '100%' }} alt="Selected" />
                 </Modal>
             )}
         </div>
     );
-}
+};
 
 export default CarrouselGalery;
