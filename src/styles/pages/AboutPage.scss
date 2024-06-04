@@ -12,15 +12,24 @@
         .text {
 
             h1 {
-                margin-bottom: 0rem;
+                margin-bottom: 1.25rem;
                 color: $colorSecondary;
                 font-size: 1.875rem;
                 font-weight: 400;
+
+
+
+            }
+
+            hr {
+                width: 18.75rem;
+                margin: 0rem;
+                border-color: $colorSecondary;
+
             }
 
             p {
                 padding: 1.25rem 0rem;
-                border-top: 0.0625rem solid $colorSecondary;
                 width: 18.75rem;
                 height: 30.625rem;
                 flex-shrink: 0;
@@ -29,6 +38,7 @@
                 font-size: 0.875rem;
                 font-style: normal;
                 font-weight: 400;
+                margin-top: 0rem;
 
                 span {
                     font-weight: 800;
@@ -45,34 +55,48 @@
 
 }
 
-@media (min-width: 768px) {
+@media (min-width: 830px) {
 
     .about-page {
+        background-image: url('/bg-about-desktop.png');
 
         .info {
             display: flex;
-            padding: 4.625rem 7.25rem;
+            padding: 5.78vw 9.06vw;
             justify-content: center;
             align-items: center;
-            gap: 2rem;
+            position: relative;
+            height: 40.88vw;
 
             .text {
 
+                width: 61vw;
+
+
                 h1 {
-                    width: 100%;
+                    font-size: 3vw;
                 }
 
-                p {}
+                hr {
+                    width: 61vw;
+                }
+
+                p {
+                    width: 45vw;
+                    height: 25vw;
+                    font-size: 1.2vw;
+                }
             }
 
             .image-container {
+                z-index: 1;
                 display: block;
-                width: 26.5rem;
-                height: 32.6875rem;
+                width: 33.13vw;
+                height: 40.86vw;
                 background-image: url('/elf.png');
                 background-size: cover;
                 background-position: center;
-                margin-left: 2rem;
+                transform: translateX(-40%);
             }
         }
 
