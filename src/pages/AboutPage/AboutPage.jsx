@@ -9,6 +9,8 @@ const AboutPage = () => {
 
                     <h1>¿Quiénes somos?</h1>
 
+                    <hr />
+
                     <p>
                         Desde 2014, en <span> Adeptus Luditorum </span>Tenerife nos dedicamos a
                         fomentar una comunidad de juegos en un ambienta acogedor y vibrante.
@@ -20,7 +22,7 @@ const AboutPage = () => {
                         <br />
                         <br />
                         Además, contamos con múltiples mesas especialmente preparadas para el
-                        <span>disfrute comunitario</span>, ya sea para lanzar dados y mover
+                        <span> disfrute comunitario</span>, ya sea para lanzar dados y mover
                         figuras o para realizar proyectos creativos en nuestras áreas de trabajo.
                         <br />
                         <br />
