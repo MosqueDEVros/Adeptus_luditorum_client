@@ -3,8 +3,11 @@ import Modal from '../ModalConfirm/ModalConfirm';
 import { useForm } from 'react-hook-form';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+import { useAuthStore } from "../../../store/auth"
 
 const SignUp = () => {
+    const { registerUser } = useAuthStore()
+
     const [modalOpen, setModalOpen] = useState(false);
     const [error, setError] = useState('');
     const [showPassword, setShowPassword] = useState(false);
@@ -23,7 +26,7 @@ const SignUp = () => {
         }
 
         setModalOpen(true);
-
+        registerUser(data)
         reset();
         setError('');
     };
