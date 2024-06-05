@@ -20,14 +20,12 @@ const CarrouselGalery = () => {
     const [photos, setPhotos] = useState([]);
     const [isOpen, setIsOpen] = useState(false);
     const [selectedPhoto, setSelectedPhoto] = useState(null);
-    const accessToken = 'IGQWRQaUdJdzFjSGNYYmpZAM2NZASi1tVkFFTmZAQdHF4ejBCVDZAyaTJNeTQ4MjFjYkFGNGltU2ZAYbUg5bUNMLUhldlFaMkFpVVVicE45TGFqU2Q0cnhqV3RSTFFGX2tpRExBSEttbXMyeVVQNGE5VVNVck9TTW5SMjQZD'; // Reemplaza con tu Access Token
-
+    const accessToken = import.meta.env.VITE_ACCESTOKENINSTAGRAM
     useEffect(() => {
         const fetchPhotos = async () => {
             let url = `https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,thumbnail_url,permalink&limit=4&access_token=${accessToken}`;
             let allPhotos = [];
             const maxPhotos = 50;
-
             while (url && allPhotos.length < maxPhotos) {
                 try {
                     const response = await axios.get(url);
