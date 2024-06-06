@@ -41,7 +41,6 @@ const CarrouselGalery = () => {
             const filterAllPhotos = allPhotos.filter(eachPhoto => eachPhoto.media_type !== "VIDEO");
 
             setPhotos(filterAllPhotos.slice(0, maxPhotos));
-            console.log('----->>>>', allPhotos);
         };
 
         fetchPhotos();
