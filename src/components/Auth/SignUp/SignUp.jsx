@@ -13,6 +13,8 @@ const SignUp = () => {
     const [error, setError] = useState('');
     const [showPassword, setShowPassword] = useState(false);
     const [text, useText] = useState()
+    const navigate = useNavigate()
+
     const {
         register,
         formState: { errors },
@@ -27,7 +29,7 @@ const SignUp = () => {
         }
 
         setModalOpen(true);
-        registerUser(data)
+        registerUser(data, navigate)
         //TODO este navigate no deberia de funcionar si da error es decir que no te mande al home deberia de meterse en zustand
         reset();
         setError('');
