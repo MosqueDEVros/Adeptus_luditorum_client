@@ -3,51 +3,102 @@
 
 // estilo para el carrousel en general
 .swiper {
-  width: 100vw; /* Ancho al 100% del contenedor */
-  height: 100vh ;
-  margin: 5rem auto; /* Centrar horizontalmente */
-  overflow: hidden; /* Ocultar contenido que se desborde */
+  width: 100vw;
+  /* Ancho al 100% del contenedor */
+  height: 100vh;
+  margin: 5rem auto;
+  /* Centrar horizontalmente */
+  overflow: hidden;
+  /* Ocultar contenido que se desborde */
 }
+
+.componentCarrusel {
+
+  width: 100%;
+}
+
+
+
 // esta tambien
-.swiper-slide{
+.swiper-slide {
   width: 50vw;
   height: 40vh;
 }
 
-.boxshadow{
-    width: 13rem;
+.boxshadow {
+  width: 13rem;
   height: 11rem;
   background-color: transparent;
-filter: drop-shadow(13px 20px 14px rgba(0, 0, 0, 0.45));
-/* Estilos para cada figura en esta clase le damos un forma en partidular como celda de panal de abjea 
+  filter: drop-shadow(13px 20px 14px rgba(0, 0, 0, 0.45));
+
+  /* Estilos para cada figura en esta clase le damos un forma en partidular como celda de panal de abjea 
  */
-.div-heaxgon {
-  background-color: white; /* Agregar un fondo */
-  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-}
+  .div-heaxgon {
+    object-fit: cover;
+    background-color: white;
+    /* Agregar un fondo */
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  }
 }
 
 
 
 // clase reactiva que hace que cada figura este arriba o abajo  ya que si es top ira a arriba y bottom abajo las que contengan 
 //esta clase bajaran
-.div-heaxgon-bottom{
+.div-heaxgon-bottom {
   margin-top: 8rem;
- 
+
 }
+
+.ReactModal__Overlay {
+  background-color: rgba(0, 0, 0, 0.75) !important;
+  z-index: 9999999 !important;
+}
+
+.ReactModal__Content {
+  overflow: hidden !important;
+  height: 80% !important;
+  inset: 0px !important;
+  position: absolute;
+  top: 50% !important;
+  left: 50% !important;
+  bottom: auto;
+  transform: translate(-50%, -50%);
+  background-color: transparent !important;
+  border: none !important;
+  border: none;
+  width: 50vw;
+  padding: 20px;
+
+  img {
+    height: 100% !important;
+    object-fit: contain !important;
+  }
+}
+
+.closeButtonModal {
+
+  color: $colorSecondary;
+  margin: 0rem;
+  font-size: 2rem;
+  font-weight: 900;
+}
+
 // version tablet mediana
+
 @media (min-width:800px) {
 
-.boxshadow{
+  .boxshadow {
     width: 14rem;
-  height: 14rem;
-    .div-heaxgon-bottom{
+    height: 14rem;
 
-  margin-top: 10rem;
- 
-}
+    .div-heaxgon-bottom {
 
-}
+      margin-top: 10rem;
+
+    }
+
+  }
 
 
 }
@@ -55,16 +106,16 @@ filter: drop-shadow(13px 20px 14px rgba(0, 0, 0, 0.45));
 // version tablet grandes
 @media (min-width:950px) {
 
-.boxshadow{
+  .boxshadow {
     width: 18rem;
-  height: 16rem;
+    height: 16rem;
 
-    .div-heaxgon-bottom{
-  margin-top: 12rem;
- 
-}
+    .div-heaxgon-bottom {
+      margin-top: 12rem;
 
-}
+    }
+
+  }
 
 
 }
@@ -73,10 +124,10 @@ filter: drop-shadow(13px 20px 14px rgba(0, 0, 0, 0.45));
 @media (min-width:1400px) {
 
 
-.boxshadow{
-   width: 23.5rem;
-height: 20rem;
-}
+  .boxshadow {
+    width: 23.5rem;
+    height: 20rem;
+  }
 
 }
 
@@ -85,75 +136,152 @@ height: 20rem;
 
 
 @media (max-width:700px) {
+  .ReactModal__Content {
+    height: 100vh;
+    width: 100vw;
+  }
 
-.swiper {
-  transform: rotate(90deg);
-  height: 30vh ;
-  overflow: hidden;
-  margin: 17rem ;
-     width: 190vw ; 
-}
-.swiper-slide{
-  
-        align-content: center;
-    margin: 0rem 3rem; 
-  height: 30vh;
-}
+  .bg-galery {
+    height: 63vh !important;
+  }
 
-.boxshadow{
+  .swiper {
+    transform: rotate(90deg);
+    height: 30vh;
+    overflow: hidden;
+    margin: 12rem -3rem;
+    width: 190vw;
+  }
+
+  .swiper-slide {
+
+    align-content: center;
+    margin: 0rem 3rem;
+    height: 30vh;
+  }
+
+  .boxshadow {
     width: 10rem;
-  height: 10rem;
+    height: 10rem;
 
-  background-color: transparent;
-filter: drop-shadow(13px 20px 14px rgba(0, 0, 0, 0.45));
-.div-heaxgon {
-  background-color: white; /* Agregar un fondo */
-  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-}
-}
+    background-color: transparent;
+    filter: drop-shadow(18px 3px 7px rgba(0, 0, 0, 0.45));
 
-.div-heaxgon-bottom{
-  margin-top: 0rem;
- 
-}
+    .div-heaxgon {
+      background-color: white;
+      /* Agregar un fondo */
+
+      clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    }
+  }
+
+  .div-heaxgon-bottom {
+    margin-top: 0rem;
+
+  }
 
 
 }
 
 @media (max-width:380px) {
 
-.swiper {
-     width: 120vw !important; 
-       margin: 0rem !important;
+  .swiper {
+    width: 137vw;
+  }
+
+  .swiper-slide {
+
+    margin: 0rem 6rem;
+  }
 }
 
-.swiper-slide{
-  
-    margin: 0rem 6rem; 
-}
+@media (min-width:380px) and (max-width:400px) {
+
+  .swiper {
+    width: 120vw;
+
+  }
+
+  .swiper-slide {
+
+    margin: 0rem 6rem;
+  }
 }
 
-@media (max-width:430px) {
 
-.swiper {
-     width: 150vw !important; 
-       margin: 12rem !important;
-}
+@media(min-width:400px) and (max-width:420px) {
 
-.swiper-slide{
-  
-    margin: 0rem 6rem; 
-}
-}
-@media (max-width:475px) {
+  .swiper {
+    width: 130vw;
+  }
 
-.swiper {
-     width: 180vw !important; 
-       margin: 17rem !important;
+  .swiper-slide {
+
+    margin: 0rem 6rem;
+  }
 }
 
-.swiper-slide{
-  
-    margin: 0rem 6rem; 
+
+
+@media(min-width:420px) and (max-width:430px) {
+
+  .swiper {
+    width: 130vw;
+  }
+
+  .swiper-slide {
+
+    margin: 0rem 6rem;
+  }
 }
+
+@media (min-width:430px) and (max-width:475px) {
+
+  .swiper {
+    width: 120vw;
+  }
+
+  .swiper-slide {
+
+    margin: 0rem 6rem;
+  }
+}
+
+
+@media (min-width:475px) and (max-width:555px) {
+
+  .swiper {
+    width: 102vw;
+  }
+
+  .swiper-slide {
+    margin: 0rem 5rem;
+  }
+
+}
+
+@media (min-width:555px) and (max-width:600px) {
+
+  .swiper {
+    width: 88vw;
+    margin: 12rem 2rem;
+  }
+
+  .swiper-slide {
+    margin: 0rem 6rem;
+  }
+
+}
+
+@media (min-width:600px) and (max-width:700px) {
+
+  .swiper {
+    width: 88vw;
+    margin: 12rem 2rem;
+  }
+
+  .swiper-slide {
+    margin: 0rem 4rem;
+  }
+
 }

@@ -22,12 +22,14 @@
 @import './components/auth/SignUp.scss';
 @import './components/auth/LogIn.scss';
 @import './components/auth/AnimationLeft.scss';
+@import './components/auth/ModalConfirm.scss';
 
 // componente button
 // button de login/signup
 @import './components/Buttom/BtnLogIn.scss';
 
-
+//componente spiner
+@import './components/Spiner/Spiner.scss';
 // PAGES
 
 // pagina index

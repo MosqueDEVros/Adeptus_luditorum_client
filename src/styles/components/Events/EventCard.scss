@@ -27,12 +27,16 @@
         border-radius: 0.9375rem;
         background-blend-mode: overlay;
         transition: filter 0.3s ease;
-        background-image: url('logInBGAnimation.png');
+        background-image: url('modalExample.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        ;
     }
 
     .date {
         color: #FFF;
-        width: 17.875rem;
+        width: 100%;
         height: 2.5625rem;
         text-align: center;
         font-family: Rowdies;
@@ -46,18 +50,16 @@
 @media (min-width: 768px) {
 
     .event-card {
-
+        width: 24.72vw;
         margin-right: 2.12rem;
-        width: 19.8rem;
-        height: 22.4rem;
 
         &:last-child {
             margin-right: 0;
         }
 
         .image {
-            width: 19.8rem;
-            height: 19.8rem;
+            width: 24.72vw;
+            height: 24.72vw;
         }
 
     }
@@ -79,7 +81,7 @@
 
         .date {
             color: #FFF;
-            width: 23.83vw;
+            width: 100%;
             height: 3.40vw;
             text-align: center;
             font-family: Rowdies;

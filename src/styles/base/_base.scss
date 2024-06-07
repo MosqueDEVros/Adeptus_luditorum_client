@@ -6,6 +6,7 @@ $bgPrimary: rgba(33, 33, 33, 1);
 
 
 
+
 @mixin rowJC {
     display: flex;
     flex-flow: row nowrap;
@@ -75,7 +76,74 @@ p {
     display: none;
 }
 
-.nav-bar-block{
-display: block;
+.nav-bar-block {
+    display: block;
 }
 
+
+
+@mixin button-style {
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    button {
+        background-color: #74C4F5;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 50px;
+        width: 8.375rem;
+        height: 2.5rem;
+        cursor: pointer;
+        text-align: center;
+        transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+        background-color: $colorTertiary;
+    }
+
+    button:focus {
+        outline: none;
+    }
+}
+
+
+// cambios css formulario
+.password-toggle {
+    margin-top: 0.5rem;
+
+}
+
+.error-message {
+    text-align: end;
+}
+
+
+@mixin password-icon {
+    color: $colorSecondary;
+    position: relative;
+
+    .password-toggle {
+        transform: translateY(-3.25vw);
+        position: absolute;
+        right: 0;
+        padding: 0.5rem;
+    }
+
+    .password-icon {
+        color: $colorSecondary;
+        font-size: 1rem;
+    }
+}
+
+
+.error-message {
+    margin-top: 0rem;
+}
+
+.posicion-error {
+    @include rowJB
+}

@@ -4,9 +4,9 @@ import BtnLogIn from "../../../components/Buttom/BtnLogIn"
 
 const SignUpPage = () => {
     return (
-        <section className="block-secction-total-LogIn">
-            <AnimationLeft />
-            <div>
+        <section className="block-section-total-SignUp">
+            <AnimationLeft className="animation-left" />
+            <div className="main-text-signUp">
                 <BtnLogIn
                     text1='SignUp'
                     text2='LogIn'

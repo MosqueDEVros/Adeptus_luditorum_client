@@ -1,4 +1,20 @@
-.block-secction-total-LogIn{
-@include rowJC;
-height:100vh;
+.block-section-total-LogIn {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+
+    .main-text-logIn {
+        transform: translateX(+25%);
+    }
+
+}
+
+
+@media (max-width: 768px) {
+    .block-section-total-LogIn {
+
+        .main-text-logIn {
+            transform: none;
+        }
+    }
 }

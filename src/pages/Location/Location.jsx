@@ -10,7 +10,7 @@ const Location = () => {
                     <br />
                     C/ Santo Domingo Custodio, 33, 38108&nbsp;
                     <br className="br-display" />
-                    La Laguna, Santa Cruz de Tenerife.
+                    Taco, La Laguna, Santa Cruz de Tenerife.
                 </div>
                 <Map />
             </div>
