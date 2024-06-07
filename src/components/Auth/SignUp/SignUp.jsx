@@ -30,7 +30,6 @@ const SignUp = () => {
 
         setModalOpen(true);
         registerUser(data, navigate)
-        //TODO este navigate no deberia de funcionar si da error es decir que no te mande al home deberia de meterse en zustand
         reset();
         setError('');
     };
