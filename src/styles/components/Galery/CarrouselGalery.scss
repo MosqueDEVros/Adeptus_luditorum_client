@@ -161,9 +161,12 @@
   .boxshadow {
     width: 10rem;
     height: 10rem;
-
     background-color: transparent;
     filter: drop-shadow(18px 3px 7px rgba(0, 0, 0, 0.45));
+
+    img {
+      rotate: -90deg;
+    }
 
     .div-heaxgon {
       background-color: white;
