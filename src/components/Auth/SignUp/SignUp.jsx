@@ -12,7 +12,7 @@ const SignUp = () => {
     const [modalOpen, setModalOpen] = useState(false);
     const [error, setError] = useState('');
     const [showPassword, setShowPassword] = useState(false);
-    const navigate = useNavigate()
+    const [text, useText] = useState()
     const {
         register,
         formState: { errors },
@@ -28,12 +28,13 @@ const SignUp = () => {
 
         setModalOpen(true);
         registerUser(data)
-        navigate("/")
+        //TODO este navigate no deberia de funcionar si da error es decir que no te mande al home deberia de meterse en zustand
         reset();
         setError('');
     };
 
     const closeModal = () => {
+
         setModalOpen(false);
     };
 
@@ -100,7 +101,7 @@ const SignUp = () => {
                     <button type="submit" className="submit-button">Aceptar</button>
                 </div>
             </form>
-            <Modal isOpen={modalOpen} onClose={closeModal} />
+            <Modal text={text} isOpen={modalOpen} onClose={closeModal} />
         </div>
     );
 };
