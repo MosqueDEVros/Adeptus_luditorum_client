@@ -32,3 +32,20 @@
         transform: translateY(-100%)
     }
 }
+
+@media (max-width:700px) {
+    .componentCarrusel {
+        display: flex;
+        justify-content: center;
+
+        .containLoader {
+            .loader {
+                font-size: 3rem;
+            }
+
+            width: 90%;
+            height: 35vh !important;
+        }
+    }
+
+}

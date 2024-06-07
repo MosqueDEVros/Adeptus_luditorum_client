@@ -137,13 +137,11 @@
 
 @media (max-width:700px) {
   .ReactModal__Content {
-    height: 100vh;
+    height: 90vh;
     width: 100vw;
   }
 
-  .bg-galery {
-    height: 63vh !important;
-  }
+
 
   .swiper {
     transform: rotate(90deg);
