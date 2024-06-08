@@ -5,12 +5,19 @@
 
     .main-text-logIn {
         transform: translateX(+25%);
-    }
 
+        .buttons-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+    }
 }
 
-
 @media (max-width: 768px) {
+
     .block-section-total-LogIn {
 
         .main-text-logIn {

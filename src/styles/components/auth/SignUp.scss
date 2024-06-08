@@ -33,7 +33,7 @@
                 font-size: 0.875rem;
                 line-height: 2.5rem;
                 color: #74C4F5;
-                width: 100%;
+                width: 99.15%;
                 border: none;
                 outline: none;
                 background: none;
@@ -49,7 +49,31 @@
             }
 
             .password-wrapper {
-                @include password-icon
+                position: relative;
+                display: flex;
+                align-items: center;
+
+                input {
+                    padding-right: 2rem;
+                    /* Añade espacio para el icono */
+                }
+
+                .password-toggle {
+                    position: absolute;
+                    right: 0;
+                    background: none;
+                    border: none;
+                    cursor: pointer;
+                    padding: 0.5rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                .password-icon {
+                    color: #74C4F5;
+                    font-size: 1rem;
+                }
             }
         }
     }

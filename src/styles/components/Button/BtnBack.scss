@@ -1,0 +1,12 @@
+.arrow-back {
+    width: 1.5rem;
+    height: 1.5rem;
+    transform: rotate(-270deg);
+}
+
+@media (max-width: 768px) {
+    .arrow-back {
+        margin-left: 2rem;
+        margin-top: 3rem;
+    }
+}
