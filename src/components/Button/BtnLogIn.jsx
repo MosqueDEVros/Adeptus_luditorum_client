@@ -6,16 +6,16 @@ const BtnLogIn = () => {
 
     const location = useLocation();
     console.log(location.pathname)
-    const isRouteLoginOrSignUp = useMemo(() => location.pathname === '/auth/LogIn', [location])
+    const isRouteLoginOrSignUp = useMemo(() => location.pathname === '/auth/login', [location])
 
     return (
         <div className="block-logIn-SignUp">
 
-            <Link to={`/auth/LogIn`} className={`${isRouteLoginOrSignUp ? 'activeShadowlogIn' : 'no-decoration'}`}>
+            <Link to={`/auth/login`} className={`${isRouteLoginOrSignUp ? 'activeShadowlogIn' : 'no-decoration'}`}>
                 <div className={`left-block ${isRouteLoginOrSignUp ? 'ActiveLogin' : 'default'}`} >Ingresar</div>
             </Link>
 
-            <Link to={`/auth/SignUp`} className={`${isRouteLoginOrSignUp ? 'no-decoration' : 'activeShadowSignUp'}`}>
+            <Link to={`/auth/signup`} className={`${isRouteLoginOrSignUp ? 'no-decoration' : 'activeShadowSignUp'}`}>
                 <div className={`right-block ${isRouteLoginOrSignUp ? ' default' : 'ActiveRegister '}`}>Registro</div>
             </Link>
 

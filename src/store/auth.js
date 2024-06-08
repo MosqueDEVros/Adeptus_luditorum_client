@@ -22,7 +22,7 @@ export const useAuthStore = create(
                     } catch (err) {
                         console.log('Error during signup:', err.response);
                         // TODO: Here you should handle the error, possibly by showing a modal with an error message
-                        navigate('/auth/logIn');
+                        navigate('/auth/login');
                     }
                 },
             }),
