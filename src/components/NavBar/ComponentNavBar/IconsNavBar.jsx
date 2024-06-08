@@ -9,18 +9,18 @@ const IconsNavBar = () => {
         <div className='IconsNavbar'>
             {/* TODO aqui ira la ruta de login */}
             <Link className=""
-                to={"/auth/LogIn"} >
+                to={"/auth/login"} >
                 <img src={Account} />
             </Link>
             {/*TODO aqui ira las links de la empresa */}
 
             <Link className=''
-                to={'https://www.facebook.com/'}
+                to={'https://www.facebook.com/adeptusluditorum'}
                 target="_blank" >
                 <img src={FB} />
             </Link>
             <Link className=''
-                to={'https://www.instagram.com/'}
+                to={'https://www.instagram.com/adeptusluditorumtenerife/'}
                 target="_blank" >
                 <img src={IG} />
             </Link>

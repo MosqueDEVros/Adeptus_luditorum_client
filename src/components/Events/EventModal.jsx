@@ -5,6 +5,7 @@ const ModalComponent = ({ isOpen, onRequestClose, imageUrl }) => (
     <Modal
         isOpen={isOpen}
         onRequestClose={onRequestClose}
+        shouldCloseOnOverlayClick={true}
         style={{
             overlay: { backgroundColor: 'rgba(0, 0, 0, 0.75)' },
             content: {
@@ -24,9 +25,6 @@ const ModalComponent = ({ isOpen, onRequestClose, imageUrl }) => (
         }}
     >
         <div className="image-container">
-            <button className="closeButtonModal" onClick={onRequestClose}>
-                <p>X</p>
-            </button>
             <img src={imageUrl} alt="Event" />
         </div>
     </Modal>

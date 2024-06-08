@@ -8,7 +8,7 @@ function App() {
   const location = useLocation();
 
   // para desaparezca la navbar en logIn y SignUP
-  const isLogIndOrSignUp = useMemo(() => location.pathname === '/auth/LogIn' || location.pathname === '/auth/SignUp', [location])
+  const isLogIndOrSignUp = useMemo(() => location.pathname === '/auth/login' || location.pathname === '/auth/signup', [location])
 
 
 
