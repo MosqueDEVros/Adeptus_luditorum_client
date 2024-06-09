@@ -32,7 +32,6 @@ const useInstagramStore = create(
                 const filteredEvent = allPhotos.filter(eachPhoto => {
                     return eachPhoto.caption && (eachPhoto.caption.toLowerCase().includes("#evento") || eachPhoto.caption.toLowerCase().includes("#eventos")) && eachPhoto.caption.includes("🎲");
                 });
-                filteredEvent.slice(0, 3)
 
 
 
@@ -67,7 +66,7 @@ const useInstagramStore = create(
 
 
                 set({ photos: filterAllPhotos.slice(0, maxPhotos) });
-                set({ events: createEventDate });
+                set({ events: createEventDate.slice(0, 3) });
             },
 
         }),
