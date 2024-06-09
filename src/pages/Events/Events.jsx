@@ -53,11 +53,16 @@ const Events = () => {
                     events={events}
                     openModal={openModal} />
             </div>
-            <ModalEvent
-                isOpen={modalIsOpen}
-                onRequestClose={closeModal}
-                imageUrl={events.media_url}
-            />
+
+            {events.map((eachEvent, index) => (
+                <ModalEvent
+                    key={index}
+                    isOpen={modalIsOpen}
+                    onRequestClose={closeModal}
+                    imageUrl={eachEvent.media_url}
+                />
+            ))
+            }
         </div>
     );
 }
