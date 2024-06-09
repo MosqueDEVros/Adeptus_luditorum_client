@@ -30,7 +30,7 @@ const useInstagramStore = create(
                 const filterAllPhotos = allPhotos.filter(eachPhoto => eachPhoto.media_type !== "VIDEO");
 
                 const filterEvent = allPhotos.filter(eachPhoto => {
-                    return (eachPhoto.includes("#evento") || eachPhoto.includes("#eventos")) && eachPhoto.caption.includes("🎲");
+                    return eachPhoto.caption && (eachPhoto.caption.toLowerCase().includes("#evento") || eachPhoto.caption.toLowerCase().includes("#eventos")) && eachPhoto.caption.includes("🎲");
                 });
 
 
