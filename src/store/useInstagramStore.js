@@ -29,7 +29,7 @@ const useInstagramStore = create(
                 // TODO aqui va el filtro para foto y eventos  debemos tocar esto
                 const filterAllPhotos = allPhotos.filter(eachPhoto => eachPhoto.media_type !== "VIDEO");
 
-                const filterEvent = allPhotos.filter(eachPhoto => {
+                const filteredEvent = allPhotos.filter(eachPhoto => {
                     return eachPhoto.caption && (eachPhoto.caption.toLowerCase().includes("#evento") || eachPhoto.caption.toLowerCase().includes("#eventos")) && eachPhoto.caption.includes("🎲");
                 });
                 filterEvent.slice(0, 3)
