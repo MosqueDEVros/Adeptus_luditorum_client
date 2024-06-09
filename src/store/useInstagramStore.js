@@ -32,13 +32,42 @@ const useInstagramStore = create(
                 const filterEvent = allPhotos.filter(eachPhoto => {
                     return eachPhoto.caption && (eachPhoto.caption.toLowerCase().includes("#evento") || eachPhoto.caption.toLowerCase().includes("#eventos")) && eachPhoto.caption.includes("🎲");
                 });
+                filterEvent.slice(0, 3)
 
 
-                console.log("el filtrow", filterEvent)
+
+
+                const createEventDate = filteredEvents.map(eachEvent => {
+                    const caption = eachEvent.caption;
+                    const calendarIconIndex = caption.indexOf("🗓");
+
+                    if (calendarIconIndex !== -1) {
+                        // Buscar el salto de línea después del icono
+                        const endOfDateIndex = caption.indexOf('\n', calendarIconIndex);
+                        let eventDate;
+
+                        if (endOfDateIndex !== -1) {
+                            // Extraer el texto entre el icono 🗓 y el salto de línea
+                            eventDate = caption.substring(calendarIconIndex + 1, endOfDateIndex).trim();
+                        } else {
+                            // Si no hay salto de línea, tomar el resto del texto después del icono 🗓
+                            eventDate = caption.substring(calendarIconIndex + 1).trim();
+                        }
+
+                        return {
+                            ...eachEvent,
+                            date: eventDate
+                        };
+                    }
+
+                    return eachEvent; // Retornar el evento sin modificaciones si no contiene el icono 🗓
+                });
+
+
 
 
                 set({ photos: filterAllPhotos.slice(0, maxPhotos) });
-                set({ events: filterEvent.slice(0, 3) });
+                set({ events: createEventDate });
             },
 
         }),
