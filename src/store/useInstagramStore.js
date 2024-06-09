@@ -37,7 +37,7 @@ const useInstagramStore = create(
 
 
 
-                const createEventDate = filteredEvents.map(eachEvent => {
+                const createEventDate = filteredEvent.map(eachEvent => {
                     const caption = eachEvent.caption;
                     const calendarIconIndex = caption.indexOf("🗓");
 
