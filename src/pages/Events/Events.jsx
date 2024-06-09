@@ -56,7 +56,7 @@ const Events = () => {
             <ModalEvent
                 isOpen={modalIsOpen}
                 onRequestClose={closeModal}
-                imageUrl={selectedImage}
+                imageUrl={events.media_url}
             />
         </div>
     );
