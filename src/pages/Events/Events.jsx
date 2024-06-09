@@ -30,7 +30,6 @@ const Events = () => {
 
 
     const openModal = (imageUrl) => {
-        console.log('el ecentasooo', events)
         setSelectedImage(imageUrl);
         setModalIsOpen(true);
     };
