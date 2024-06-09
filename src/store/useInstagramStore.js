@@ -8,7 +8,6 @@ const useInstagramStore = create(
             photos: [],
             events: [],
 
-
             fetchPhotos: async (accessToken) => {
                 let url = `https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,thumbnail_url,permalink&limit=4&access_token=${accessToken}`;
                 let allPhotos = [];
@@ -25,17 +24,18 @@ const useInstagramStore = create(
                     }
                 }
 
-
-                // TODO aqui va el filtro para foto y eventos  debemos tocar esto
+                // Filtrar las fotos que no son videos
                 const filterAllPhotos = allPhotos.filter(eachPhoto => eachPhoto.media_type !== "VIDEO");
 
+                // Filtrar los eventos que cumplen con las condiciones de los hashtags y el icono 🎲
                 const filteredEvent = allPhotos.filter(eachPhoto => {
-                    return eachPhoto.caption && (eachPhoto.caption.toLowerCase().includes("#evento") || eachPhoto.caption.toLowerCase().includes("#eventos")) && eachPhoto.caption.includes("🎲");
+                    return eachPhoto.caption &&
+                        (eachPhoto.caption.toLowerCase().includes("#evento") ||
+                            eachPhoto.caption.toLowerCase().includes("#eventos")) &&
+                        eachPhoto.caption.includes("🎲");
                 });
 
-
-
-
+                // Crear una nueva clave en cada objeto con la línea de texto que sigue al icono del calendario
                 const createEventDate = filteredEvent.map(eachEvent => {
                     const caption = eachEvent.caption;
                     const calendarIconIndex = caption.indexOf("🗓");
@@ -55,24 +55,20 @@ const useInstagramStore = create(
 
                         return {
                             ...eachEvent,
-                            date: eventDate
+                            eventDate: eventDate
                         };
                     }
 
                     return eachEvent; // Retornar el evento sin modificaciones si no contiene el icono 🗓
                 });
 
-
-
-
                 set({ photos: filterAllPhotos.slice(0, maxPhotos) });
                 set({ events: createEventDate.slice(0, 3) });
             },
-
         }),
         {
             name: 'instagram-photos', // Nombre del almacenamiento en localStorage
-            // getStorage: () => localStorage,Puedes cambiar a sessionStorage si prefieres
+            // getStorage: () => localStorage, // Puedes cambiar a sessionStorage si prefieres
         }
     )
 );
