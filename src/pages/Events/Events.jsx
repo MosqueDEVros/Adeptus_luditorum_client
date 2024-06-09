@@ -5,29 +5,40 @@ import useInstagramStore from '../../store/useInstagramStore';
 
 const Events = () => {
     const [modalIsOpen, setModalIsOpen] = useState(false);
-    const [selectedEvent, setSelectedEvent] = useState(null);
     const [selectedImage, setSelectedImage] = useState('');
 
     const events = useInstagramStore(state => state.events);
     const fetchPhotos = useInstagramStore(state => state.fetchPhotos);
 
+
+
     const accessToken = import.meta.env.VITE_ACCESTOKENINSTAGRAM;
 
     useEffect(() => {
+
         if (events.length === 0) {
             fetchPhotos(accessToken);
         }
+
     }, [accessToken, fetchPhotos, events.length]);
 
-    const openModal = (event, imageUrl) => {
-        setSelectedEvent(event);
+
+
+
+
+
+
+
+    const openModal = (imageUrl) => {
         setSelectedImage(imageUrl);
         setModalIsOpen(true);
     };
 
+
+
+
     const closeModal = () => {
         setModalIsOpen(false);
-        setSelectedEvent(null);
         setSelectedImage('');
     };
 
@@ -38,22 +49,17 @@ const Events = () => {
                 <hr />
             </div>
             <div className="events-list">
-                {events.map((event, index) => (
-                    <EventCard
-                        key={index}
-                        event={event}
-                        openModal={(imageUrl) => openModal(event, imageUrl)}
-                    />
-                ))}
+                <EventCard
+                    events={events}
+                    openModal={openModal} />
             </div>
-            {selectedEvent && (
-                <ModalEvent
-                    isOpen={modalIsOpen}
-                    onRequestClose={closeModal}
-                    event={selectedEvent}
-                    selectedImage={selectedImage}
-                />
-            )}
+
+            {/* TODO EL MODAL DEBE ABRIR CADA EVENTO EN CONCRETO */}
+            <ModalEvent
+                isOpen={modalIsOpen}
+                onRequestClose={closeModal}
+                imageUrl={events.media_url}
+            />
         </div>
     );
 }
