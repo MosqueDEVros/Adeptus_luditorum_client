@@ -32,7 +32,7 @@ const useInstagramStore = create(
                 const filteredEvent = allPhotos.filter(eachPhoto => {
                     return eachPhoto.caption && (eachPhoto.caption.toLowerCase().includes("#evento") || eachPhoto.caption.toLowerCase().includes("#eventos")) && eachPhoto.caption.includes("🎲");
                 });
-                filterEvent.slice(0, 3)
+                filteredEvent.slice(0, 3)
 
 
 
