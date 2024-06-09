@@ -5,40 +5,29 @@ import useInstagramStore from '../../store/useInstagramStore';
 
 const Events = () => {
     const [modalIsOpen, setModalIsOpen] = useState(false);
+    const [selectedEvent, setSelectedEvent] = useState(null);
     const [selectedImage, setSelectedImage] = useState('');
 
     const events = useInstagramStore(state => state.events);
     const fetchPhotos = useInstagramStore(state => state.fetchPhotos);
 
-
-
     const accessToken = import.meta.env.VITE_ACCESTOKENINSTAGRAM;
 
     useEffect(() => {
-
         if (events.length === 0) {
             fetchPhotos(accessToken);
         }
-
     }, [accessToken, fetchPhotos, events.length]);
 
-
-
-
-
-
-
-
-    const openModal = (imageUrl) => {
+    const openModal = (event, imageUrl) => {
+        setSelectedEvent(event);
         setSelectedImage(imageUrl);
         setModalIsOpen(true);
     };
 
-
-
-
     const closeModal = () => {
         setModalIsOpen(false);
+        setSelectedEvent(null);
         setSelectedImage('');
     };
 
@@ -49,20 +38,22 @@ const Events = () => {
                 <hr />
             </div>
             <div className="events-list">
-                <EventCard
-                    events={events}
-                    openModal={openModal} />
+                {events.map((event, index) => (
+                    <EventCard
+                        key={index}
+                        event={event}
+                        openModal={(imageUrl) => openModal(event, imageUrl)}
+                    />
+                ))}
             </div>
-
-            {events.map((eachEvent, index) => (
+            {selectedEvent && (
                 <ModalEvent
-                    key={index}
                     isOpen={modalIsOpen}
                     onRequestClose={closeModal}
-                    imageUrl={eachEvent.media_url}
+                    event={selectedEvent}
+                    selectedImage={selectedImage}
                 />
-            ))
-            }
+            )}
         </div>
     );
 }
