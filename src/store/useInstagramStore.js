@@ -28,7 +28,24 @@ const useInstagramStore = create(
 
                 // TODO aqui va el filtro para foto y eventos  debemos tocar esto
                 const filterAllPhotos = allPhotos.filter(eachPhoto => eachPhoto.media_type !== "VIDEO");
-                const filterEvent = allPhotos.filter(eachPhoto => eachPhoto.media_type !== "CAROUSEL_ALBUM");
+
+                const filterEvent = allPhotos.filter(eachPhoto => {
+                    if (!eachPhoto.caption) {
+                        return false;
+                    }
+                    const captionLower = eachPhoto.caption.toLowerCase();
+                    return (captionLower.includes("#evento") || captionLower.includes("#eventos")) && eachPhoto.caption.includes("🎲");
+                });
+
+
+                const filterEventDate = filterEvent.filter(eachEvent => {
+
+                    if (captionLower.includes("")) {
+
+                    }
+
+                })
+
 
 
                 set({ photos: filterAllPhotos.slice(0, maxPhotos) });
@@ -38,7 +55,7 @@ const useInstagramStore = create(
         }),
         {
             name: 'instagram-photos', // Nombre del almacenamiento en localStorage
-            getStorage: () => localStorage, // Puedes cambiar a sessionStorage si prefieres
+            // getStorage: () => localStorage,Puedes cambiar a sessionStorage si prefieres
         }
     )
 );
