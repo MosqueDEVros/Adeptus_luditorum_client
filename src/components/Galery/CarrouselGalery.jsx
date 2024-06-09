@@ -23,7 +23,6 @@ const CarrouselGalery = () => {
 
 
     const accessToken = import.meta.env.VITE_ACCESTOKENINSTAGRAM;
-
     useEffect(() => {
 
         if (photos.length === 0) {
