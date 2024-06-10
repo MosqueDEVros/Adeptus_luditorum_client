@@ -25,7 +25,7 @@ const ModalComponent = ({ isOpen, onRequestClose, imageUrl }) => (
         }}
     >
         <div className="image-container">
-            <img src={imageUrl.media_url} alt="Event" />
+            <img src={imageUrl} alt="Event" />
         </div>
     </Modal>
 );

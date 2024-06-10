@@ -1,8 +1,8 @@
 import React from 'react';
 
 const EventCard = ({ openModal, events }) => {
-    const handleClick = () => {
-        openModal('./modalExample.png');
+    const handleClick = (imgage) => {
+        openModal(imgage);
     };
 
     return (
@@ -13,7 +13,7 @@ const EventCard = ({ openModal, events }) => {
                 // TODO  va lo que generamos del texto que llega
                 < div
                     key={index}
-                    className="event-card" onClick={handleClick} >
+                    className="event-card" onClick={handleClick(imgage)} >
                     <div className="image" style={{ backgroundImage: `url(${eachEvent.media_url})` }}></div>
                     <div className="date">{events.eventDate}</div>
                 </div >
