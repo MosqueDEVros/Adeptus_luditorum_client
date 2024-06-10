@@ -47,10 +47,10 @@ const useInstagramStore = create(
 
                         if (endOfDateIndex !== -1) {
                             // Extraer el texto entre el icono 🗓 y el salto de línea
-                            eventDate = caption.substring(calendarIconIndex + 1, endOfDateIndex).trim();
+                            eventDate = caption.substring(calendarIconIndex + 2, endOfDateIndex).trim();
                         } else {
                             // Si no hay salto de línea, tomar el resto del texto después del icono 🗓
-                            eventDate = caption.substring(calendarIconIndex + 1).trim();
+                            eventDate = caption.substring(calendarIconIndex + 2).trim();
                         }
 
                         return {
