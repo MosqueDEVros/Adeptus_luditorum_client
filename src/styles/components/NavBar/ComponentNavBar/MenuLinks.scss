@@ -1,8 +1,6 @@
-
 // componente principal div donde esta todos los LINKS
 
 .component2 {
-    
     @include columnJA;
     align-items: start;
     @include font-rowdies-regular;
@@ -12,14 +10,15 @@
 // estilos para cada uno de los LINK
 .navbar-link {
     text-align: start;
-  margin-left: 2rem;
+    margin-left: 2rem;
     list-style-type: none;
     color: $colorPrimary;
     text-decoration: none;
     text-transform: none;
     font-size: 1rem;
- margin-top: 1.5rem;
-    position: relative; /* Agregamos posición relativa */
+    margin-top: 1.5rem;
+    position: relative;
+    /* Agregamos posición relativa */
 }
 
 // animacion de hover para cada LINKS en el cambiamos el color de la letra
@@ -31,10 +30,11 @@
     20% {
         color: $colorSecondary;
     }
+
     50% {
         color: $colorPrimary;
     }
-   
+
     100% {
         color: $colorSecondary;
     }
@@ -46,35 +46,41 @@
 .navbar-link::after {
     content: '';
     position: absolute;
-    bottom: -1px; /* Mueve el borde debajo del texto */
-    left: 50%; /* Centra el borde horizontalmente */
-    width: 0; /* Ancho inicial */
-    height: 1px; /* Grosor del borde */
-    background-color: $colorSecondary; /* Color del borde */
-    transition: width 0.3s ease-out, left 0.3s ease-out; /* Transición suave */
-    transform: translateX(-50% ); /* Centra el borde horizontalmente */
-   
+    bottom: -1px;
+    /* Mueve el borde debajo del texto */
+    left: 50%;
+    /* Centra el borde horizontalmente */
+    width: 0;
+    /* Ancho inicial */
+    height: 1px;
+    /* Grosor del borde */
+    background-color: $colorSecondary;
+    /* Color del borde */
+    transition: width 0.8s ease-out, left 0.8s ease-out;
+    /* Transición suave */
+    transform: translateX(-50%);
+    /* Centra el borde horizontalmente */
+
 }
 
 .navbar-link:hover::after {
- animation: animationBorderNavbar 1.5s forwards;
-  box-shadow: 2px 2px 6px $colorPrimary; 
+    animation: animationBorderNavbar 1.8s forwards;
+    box-shadow: 2px 2px 6px $colorPrimary;
 }
+
 @keyframes animationBorderNavbar {
     20% {
-      width: calc(100% + 2rem);
+        width: calc(100%);
     }
+
     50% {
-      width: calc(50% + 2rem);
+        width: calc(88%);
     }
+
     100% {
-      width: calc(55% + 2rem);
+        width: calc(90%);
     }
 }
-
-
-
-
 
 
 
@@ -84,11 +90,12 @@
     .component2 {
         @include rowJA;
     }
+
     .navbar-link {
-         text-shadow: 2px 2px 6px $colorPrimary;
-         font-size: 0.8rem;
+        text-shadow: 2px 2px 6px $colorPrimary;
+        font-size: 0.8rem;
         margin-top: 0.5rem;
-     
+
     }
 }
 
@@ -97,9 +104,9 @@
     .component2 {
         @include rowJA;
     }
+
     .navbar-link {
-         font-size: 1.2rem;
-      
+        font-size: 1.2rem;
+
     }
 }
-
