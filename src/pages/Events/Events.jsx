@@ -29,9 +29,10 @@ const Events = () => {
 
 
 
-    const openModal = (imageUrl) => {
-        setSelectedImage(imageUrl);
+    const openModal = (imgage) => {
+        setSelectedImage(imgage);
         setModalIsOpen(true);
+        console.log("url de la imagen",)
     };
 
 
@@ -58,7 +59,7 @@ const Events = () => {
             <ModalEvent
                 isOpen={modalIsOpen}
                 onRequestClose={closeModal}
-                imageUrl={events.media_url}
+                imageUrl={selectedImage}
             />
         </div>
     );
