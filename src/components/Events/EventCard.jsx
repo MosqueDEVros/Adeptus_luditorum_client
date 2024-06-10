@@ -15,7 +15,7 @@ const EventCard = ({ openModal, events }) => {
                     key={index}
                     className="event-card" onClick={() => handleClick(eachEvent.media_url)} >
                     <div className="image" style={{ backgroundImage: `url(${eachEvent.media_url})` }}></div>
-                    <div className="date">{eachEvent.eventDate}</div>
+                    <p className="date">{eachEvent.eventDate}</p>
                 </div >
             ))
             }
