@@ -1,5 +1,4 @@
-    
- .nav-bar-block{
+    .nav-bar-block {
       width: 100vw;
       position: fixed;
       background-color: $bgPrimary;
@@ -7,173 +6,175 @@
     }
 
 
-
-    
-.hamburguer-btn{
-  margin-right: 0.4rem;
-}
-    // barra de navegacion base
-    .nav-base{
-      margin: 1rem 1rem;
-@include rowJB;
-align-items: start;
-align-content: flex-start;
-  height: 5vh;
+    .hamburguer-btn {
+      margin-right: 0.4rem;
     }
 
-.block-version-pc{
-  display: none;
-  margin: 0 auto;
+    // barra de navegacion base
+    .nav-base {
+      margin: 1rem 1rem;
+      @include rowJB;
+      align-items: start;
+      align-content: flex-start;
+      height: 5vh;
+    }
 
-}
-  
-.hidden, .hiddenFilter{
-display: none;
+    .block-version-pc {
+      display: none;
+      margin: 0 auto;
 
-}
+    }
 
+    .hidden,
+    .hiddenFilter {
+      display: none;
 
-// oculta en version mobile la barra de navegacion
-.hidden-animation{
-  background-color: $bgPrimary;
-box-shadow: 7px 0px 14px 0px rgba(3, 73, 174, 1);
- animation:extenDdropMenu 1s ease forwards ;
- left: 0%;
- top: 0%;
- height: 125vh;
-flex-flow:column nowrap;
-justify-content: start;
-position: fixed;
- animation:shrinkDropMenuReverse 0.7s ease forwards ;
-}
-
-@keyframes shrinkDropMenuReverse {
-  0% {
-    width: 75vw; /* Altura final de .nav-extend */
-  }
- 
-  100% {
-    width: 0vw;
-    left: -9rem;
-
-  }
-}
+    }
 
 
+    // oculta en version mobile la barra de navegacion
+    .hidden-animation {
+      background-color: $bgPrimary;
+      box-shadow: 7px 0px 14px 0px rgba(3, 73, 174, 1);
+      animation: extenDdropMenu 1s ease forwards;
+      left: 0%;
+      top: 0%;
+      height: 125vh;
+      flex-flow: column nowrap;
+      justify-content: start;
+      position: fixed;
+      animation: shrinkDropMenuReverse 0.7s ease forwards;
+    }
 
-// aparece en version mobile la barra de navegacion y la coloca
-.block{
- background-color: $bgPrimary;
-box-shadow: 7px 0px 14px 0px rgba(3, 73, 174, 1);
- animation:extenDdropMenu 1s ease forwards ;
- left: 0%;
- top: 0%;
- height: 125vh;
-display: flex;
-flex-flow:column nowrap;
-justify-content: start;
-position: fixed;
- animation:extenDdropMenu 0.5s ease forwards ;
- left: 0%;
- top: 0%;
- height: 105vh;
+    @keyframes shrinkDropMenuReverse {
+      0% {
+        width: 75vw;
+        /* Altura final de .nav-extend */
+      }
 
-}
+      100% {
+        width: 0vw;
+        left: -9rem;
 
-@keyframes extenDdropMenu{
-0%{
-  width: 0vw;
-}
-100%{
-width: 75vw;
-}
-}
-
-.show-filter-black{
-    position: fixed;
-     top: 0%;
-height: 100vh;
-    width: 100vw;
-background:rgba(0, 0, 0, 0.463);
- animation:extenDdropMenufilter 1s ease forwards ;
-
-}
-
-@keyframes extenDdropMenufilter{
-0%{
-  width: 0vw;
-}
-100%{
-width: 100vw;
-}
-}
+      }
+    }
 
 
 
+    // aparece en version mobile la barra de navegacion y la coloca
+    .block {
+      background-color: $bgPrimary;
+      box-shadow: 7px 0px 14px 0px rgba(3, 73, 174, 1);
+      animation: extenDdropMenu 1s ease forwards;
+      left: 0%;
+      top: 0%;
+      height: 125vh;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: start;
+      position: fixed;
+      animation: extenDdropMenu 0.5s ease forwards;
+      left: 0%;
+      top: 0%;
+      height: 105vh;
 
-.block-btn-close{
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-between;
-}
-.btn-close-navbar{
-@include rowJC;
-margin-top: 1rem;
-margin-right: 1rem;
-  width: 19.5px;
-height: 19.5px;
-gap: 0px;
-opacity: 0px;
-border-radius: 0.5rem;
-background-color: $colorPrimary;
-}
-.btn-close-navbar p{
-font-size: 0.6rem;
-font-weight: 100 !important;
-}
+    }
+
+    @keyframes extenDdropMenu {
+      0% {
+        width: 0vw;
+      }
+
+      100% {
+        width: 75vw;
+      }
+    }
+
+    .show-filter-black {
+      position: fixed;
+      top: 0%;
+      height: 100vh;
+      width: 100vw;
+      background: rgba(0, 0, 0, 0.463);
+      animation: extenDdropMenufilter 1s ease forwards;
+
+    }
+
+    @keyframes extenDdropMenufilter {
+      0% {
+        width: 0vw;
+      }
+
+      100% {
+        width: 100vw;
+      }
+    }
 
 
 
 
+    .block-btn-close {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+    }
 
-// disposicion componente de logo empresa y navegacion por la web
-.reverse-mb{
+    .btn-close-navbar {
+      @include rowJC;
+      margin-top: 1rem;
+      margin-right: 1rem;
+      width: 19.5px;
+      height: 19.5px;
+      gap: 0px;
+      opacity: 0px;
+      border-radius: 0.5rem;
+      background-color: $colorPrimary;
+    }
 
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-}
-
-
-// disposicion iconos de cuenta facebook y instagram
-.icon-social-block{
- padding: 0.5rem;
-  display: block;
-}
-
-
-
-
-// version tablet
-@media (min-width: 750px){
-.block-version-pc{
-  display: block;
-}
-.reverse-mb{
-  
-    flex-direction: row;
-}
-
-.reverse-mb button{
-display: none;
-}
-.show-filter-black{
-  display: none;
-}
-
-}
+    .btn-close-navbar p {
+      font-size: 0.6rem;
+      font-weight: 100 !important;
+    }
 
 
 
 
 
+    // disposicion componente de logo empresa y navegacion por la web
+    .reverse-mb {
+
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+    }
+
+
+    // disposicion iconos de cuenta facebook y instagram
+    .icon-social-block {
+      padding: 0.7rem;
+      display: block;
+    }
+
+
+
+
+    // version tablet
+    @media (min-width: 750px) {
+      .block-version-pc {
+        display: block;
+      }
+
+      .reverse-mb {
+
+        flex-direction: row;
+      }
+
+      .reverse-mb button {
+        display: none;
+      }
+
+      .show-filter-black {
+        display: none;
+      }
+
+    }
