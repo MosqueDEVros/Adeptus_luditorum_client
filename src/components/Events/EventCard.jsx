@@ -13,9 +13,9 @@ const EventCard = ({ openModal, events }) => {
                 // TODO  va lo que generamos del texto que llega
                 < div
                     key={index}
-                    className="event-card" onClick={handleClick(imgage)} >
+                    className="event-card" onClick={handleClick(eachEvent.media_url)} >
                     <div className="image" style={{ backgroundImage: `url(${eachEvent.media_url})` }}></div>
-                    <div className="date">{events.eventDate}</div>
+                    <div className="date">{eachEvent.eventDate}</div>
                 </div >
             ))
             }
