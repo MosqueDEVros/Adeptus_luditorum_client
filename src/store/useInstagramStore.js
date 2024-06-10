@@ -70,7 +70,7 @@ const useInstagramStore = create(
         }),
         {
             name: 'instagram-photos', // Nombre del almacenamiento en localStorage
-            // getStorage: () => localStorage, // Puedes cambiar a sessionStorage si prefieres
+            getStorage: () => localStorage, // Puedes cambiar a sessionStorage si prefieres
         }
     )
 );
