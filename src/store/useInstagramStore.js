@@ -35,7 +35,7 @@ const useInstagramStore = create(
                         eachPhoto.caption.includes("🎲");
                 });
 
-                //    TODO  este filtro no esta acabado 
+                // Extraer la fecha del evento después del icono 🗓
                 const createEventDate = filteredEvent.map(eachEvent => {
                     const caption = eachEvent.caption;
                     const calendarIconIndex = caption.indexOf("🗓");
@@ -59,8 +59,10 @@ const useInstagramStore = create(
                         };
                     }
 
+                    // Retornar el evento original si no se encuentra el icono 🗓
                     return eachEvent;
                 });
+
 
                 set({ photos: filterAllPhotos.slice(0, maxPhotos) });
                 set({ events: createEventDate.slice(0, 3) });
