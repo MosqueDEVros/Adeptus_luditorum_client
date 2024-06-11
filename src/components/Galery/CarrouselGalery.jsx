@@ -19,9 +19,6 @@ const CarrouselGalery = () => {
     const photos = useInstagramStore(state => state.photos);
     const fetchPhotos = useInstagramStore(state => state.fetchPhotos);
 
-
-
-
     const accessToken = import.meta.env.VITE_ACCESTOKENINSTAGRAM;
     useEffect(() => {
 
@@ -32,14 +29,9 @@ const CarrouselGalery = () => {
     }, [accessToken, fetchPhotos, photos.length]);
 
 
-
-
-
     const toggleInitialPosition = () => {
         setInitialPosition(initialPosition === 'bottom' ? 'top' : 'bottom');
     };
-
-
 
 
     const openModal = (photo) => {
@@ -47,15 +39,20 @@ const CarrouselGalery = () => {
         setIsOpen(true);
     };
 
+
     const closeModal = () => {
         setIsOpen(false);
         setSelectedPhoto(null);
     };
 
+
     const isLoaderPhoto = useMemo(() => photos.length === 0, [photos]);
 
+
     return (
+
         <div className='componentCarrusel'>
+
             {isLoaderPhoto ? (
                 <Spiner />
             ) : (
@@ -72,21 +69,27 @@ const CarrouselGalery = () => {
                     modules={[Autoplay, Navigation]}
                 >
                     {photos.map((eachPhoto, index) => (
+
                         <SwiperSlide key={`${eachPhoto.id}-${index}`} style={{ order: index }}>
+
                             <div className='boxshadow' onClick={() => openModal(eachPhoto)}>
                                 <img src={eachPhoto.media_url} className={`div-heaxgon ${index % 2 === 0 ? 'div-heaxgon-top' : 'div-heaxgon-bottom'}`} style={{ width: '100%', height: '100%' }} alt={`Slide ${index}`} />
                             </div>
+
                         </SwiperSlide>
+
                     ))}
+
                 </Swiper>
             )}
 
             {selectedPhoto && (
+
                 <Modal isOpen={isOpen} onRequestClose={closeModal} contentLabel="Image Modal">
-                    <button onClick={closeModal}>
-                        <p className='closeButtonModal'>X</p>
-                    </button>
+
                     <img src={selectedPhoto.media_url} style={{ width: '100%' }} alt="Selected" />
+
+
                 </Modal>
             )}
         </div>

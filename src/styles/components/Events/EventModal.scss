@@ -4,31 +4,38 @@
     align-items: center;
 
     img {
-        width: 90vw;
+        width: 100vw;
         object-fit: cover;
-    }
-
-    .closeButtonModal {
-        background: none;
-        border: none;
-        font-size: 1.5em;
-        cursor: pointer;
-        z-index: 1;
-
-        p {
-            color: $colorSecondary;
-            margin: 0rem;
-            font-size: 2rem;
-            font-weight: 900;
-        }
     }
 }
 
-@media (min-width: 768px) {
+.button-container {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    background-color: transparent;
+}
+
+.close-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: $colorTertiary;
+    color: #fff;
+    transition: background-color 0.3s;
+
+    &:hover {
+        background-color: $colorPrimary;
+    }
+}
+
+@media (min-width: 655px) {
     .image-container {
         img {
-            width: 700px;
-            height: 700px;
+            width: 600px;
+            height: 600px;
         }
     }
 }

@@ -1,8 +1,8 @@
 import React from 'react';
 
 const EventCard = ({ openModal, events }) => {
-    const handleClick = (imgage) => {
-        openModal(imgage);
+    const handleClick = (image) => {
+        openModal(image);
     };
 
     return (
