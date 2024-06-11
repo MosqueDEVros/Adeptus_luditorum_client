@@ -76,13 +76,7 @@
   }
 }
 
-.closeButtonModal {
 
-  color: $colorSecondary;
-  margin: 0rem;
-  font-size: 2rem;
-  font-weight: 900;
-}
 
 // version tablet mediana
 
@@ -137,6 +131,7 @@
 
 @media (max-width:700px) {
   .ReactModal__Content {
+    transform: translate(-50%, -70%);
     height: 90vh;
     width: 100vw;
   }

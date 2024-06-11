@@ -26,8 +26,8 @@ const ModalComponent = ({ isOpen, onRequestClose, imageUrl }) => {
             border: 'none',
             borderRadius: '0.80vw',
             overflow: 'hidden',
-            width: `${imageSize.width}px`,
-            height: `${imageSize.height}px`
+            width: `90%`,
+            height: `90%`
         }
     };
 
@@ -40,10 +40,14 @@ const ModalComponent = ({ isOpen, onRequestClose, imageUrl }) => {
         >
             <div className="image-container">
                 <img src={imageUrl} alt="Event" />
-
+            </div>
+            <div className="button-container">
+                <button className="close-button" onClick={onRequestClose}>Cerrar</button>
             </div>
         </Modal>
     );
 };
 
 export default ModalComponent;
+
+

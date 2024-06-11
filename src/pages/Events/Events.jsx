@@ -10,8 +10,6 @@ const Events = () => {
     const events = useInstagramStore(state => state.events);
     const fetchPhotos = useInstagramStore(state => state.fetchPhotos);
 
-
-
     const accessToken = import.meta.env.VITE_ACCESTOKENINSTAGRAM;
 
     useEffect(() => {
@@ -23,20 +21,11 @@ const Events = () => {
     }, [accessToken, fetchPhotos, events.length]);
 
 
-
-
-
-
-
-
     const openModal = (imgage) => {
         setSelectedImage(imgage);
         setModalIsOpen(true);
         console.log("url de la imagen",)
     };
-
-
-
 
     const closeModal = () => {
         setModalIsOpen(false);
@@ -44,23 +33,26 @@ const Events = () => {
     };
 
     return (
+
         <div className="events-page" id='Events'>
+
             <div className="events-title">
                 <div className="title">Eventos</div>
                 <hr />
             </div>
+
             <div className="events-list">
                 <EventCard
                     events={events}
                     openModal={openModal} />
             </div>
 
-            {/* TODO EL MODAL DEBE ABRIR CADA EVENTO EN CONCRETO */}
             <ModalEvent
                 isOpen={modalIsOpen}
                 onRequestClose={closeModal}
                 imageUrl={selectedImage}
             />
+
         </div>
     );
 }
