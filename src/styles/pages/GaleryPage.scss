@@ -1,7 +1,6 @@
 .bg-galery {
     background: linear-gradient(0deg, rgba(0, 80, 157, 0.76) 0%, rgba(0, 80, 157, 0.76) 100%), url('/public/indexBG.png') lightgray 50% / cover no-repeat;
     width: 100vw;
-    height: 100vh;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 69%;
@@ -32,7 +31,6 @@
     .bg-galery {
 
         background: linear-gradient(0deg, rgba(3, 73, 174, 0.76) 0%, rgba(3, 73, 174, 0.76) 100%), url('/public/indexBG.png') lightgray 50% / cover no-repeat;
-        height: 120vh !important;
 
         h1 {
             font-size: 2.5rem;
