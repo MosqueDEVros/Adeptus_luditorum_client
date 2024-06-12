@@ -1,4 +1,5 @@
 import GifImage from '../../../../public/animation.gif'
+
 const AnimationLeft = () => {
     return (
         <div className="block-animation">
