@@ -1,5 +1,5 @@
 .bg-galery {
-    background: linear-gradient(0deg, rgba(0, 80, 157, 0.76) 0%, rgba(0, 80, 157, 0.76) 100%), url('/public/indexBG.png') lightgray 50% / cover no-repeat;
+    background: linear-gradient(0deg, rgba(0, 80, 157, 0.76) 0%, rgba(0, 80, 157, 0.76) 100%), url('/public/indexBG.webp') lightgray 50% / cover no-repeat;
     width: 100vw;
     background-size: cover;
     background-repeat: no-repeat;
@@ -30,7 +30,7 @@
 @media (max-width: 750px) {
     .bg-galery {
 
-        background: linear-gradient(0deg, rgba(3, 73, 174, 0.76) 0%, rgba(3, 73, 174, 0.76) 100%), url('/public/indexBG.png') lightgray 50% / cover no-repeat;
+        background: linear-gradient(0deg, rgba(3, 73, 174, 0.76) 0%, rgba(3, 73, 174, 0.76) 100%), url('/public/indexBG.webp') lightgray 50% / cover no-repeat;
 
         h1 {
             font-size: 2.5rem;

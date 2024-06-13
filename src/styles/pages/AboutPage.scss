@@ -1,5 +1,5 @@
 .about-page {
-    background-image: url('/bg-about-mobile.png');
+    background-image: url('/bg-about-mobile.webp');
     background-repeat: no-repeat;
     background-size: contain;
     background-position: right;
@@ -52,7 +52,7 @@
 @media (min-width: 830px) {
 
     .about-page {
-        background-image: url('/bg-about-desktop.png');
+        background-image: url('/bg-about-desktop.webp');
 
         .info {
             display: flex;
@@ -85,7 +85,7 @@
                 display: block;
                 width: 33.13vw;
                 height: 40.86vw;
-                background-image: url('/elf.png');
+                background-image: url('/elf.webp');
                 background-size: cover;
                 background-position: center;
                 transform: translateX(-40%);
